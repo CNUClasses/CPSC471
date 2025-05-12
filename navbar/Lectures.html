@@ -1,0 +1,91 @@
+<section id="main_content" class="inner" style="height:100%;display:block;">
+    <style>
+        style_noborder{
+        border-width: 0px;
+        }
+        .style_white {
+        border-style: solid;
+        border-width: 1px;
+        background-color: #ffffff;
+             }
+     .style_emphasize {
+        border-style: solid;
+        border-width: 1px;
+        background-color:#F4F2D8;;
+             }
+     </style>
+    <table style="width: 100%" class="style_noborder ">
+        <tr>
+            <td class="style_emphasize " colspan="3"> 
+                <ul style="color: #cc0000"> 
+                        <li> Textbooks: None required, but I find the following helpful
+                        <ul>
+                            <!-- <li>'Python for Data Analysis' by Wes McKinney - mostly for pandas help</li>
+                            <li>'Machine Learning with Python Cookbook' by Chris Albon - short data/ml recipes</li>
+                            <li>'Python Machine Learning' by Sebastian Raschka - Excellent machine learning introduction</li>
+                            <li><a href='https://blog.dailydoseofds.com/'>Daily Dose of Data Science</a>An approachable blog with lots of relevant content</li>
+                            <li><a href='https://dataelixir.com/'>Data Elixir</a>An approachable newsletter with lots of relevant content</li> -->
+                        </ul>
+                    </li>
+                  </ul>
+            </td>
+    
+        </tr>
+         <tr>
+            <td class="style_white "><em><strong>Week</strong></em></td>
+            <td class="style_white "><em><strong>Lectures/Readings</strong></em></td>
+            <td class="style_white "><em><strong>Examples</strong></em></td>
+        </tr>
+        <tr>
+            <td class="style_white "><em>1</em></td>
+            <td class="style_white ">
+             
+                <strong>Lectures</strong><BR>
+                    <ul> 
+                    Python and PyTorch setup <br>
+                    Tensor operations <br>
+                    Tensors are like np arrays except they can be on CPU or GPU<br>
+                    Automatic differentiation <br>
+                    Need a AI intro (supervised/unsupervised semi supervised)<br>
+                    </ul>
+                    <!-- https://cnuclasses.github.io/DATA301/content/lectures/week5/51_ML_types_clustering_introduction.pdf -->
+                <!-- sample your dataset if it's huge to make it faster to iterate over development-->
+
+                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week1/1_Introduction.pdf"> Syllabus and Course Introduction</a></strong><br>
+                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week1/3_tools.pdf"> Anaconda, Virtual Environments, Jupyter Lab, Optional record keeping tools</a></strong> Tools for this class and some optional tools to help you keep track of information<br>
+                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week1/3_setup_CPSC471_python_environment_with_notebook_templates.txt"> List of commands to set up a virtual environment, switch to it and then invoke jupyter lab</a></strong>  Plus a bit on configuring notebook templates<br><br>
+                <strong><a href="https://cnuclasses.github.io/CPSC471/content/hotkeys/hotkeys.txt" style="color: #00cc00"> Jupyter Lab shortcuts Keys</a></strong><br>
+                Jupyter notebooks are a great way to prototype; you can write a bit of code, test it and change it without having to restart a python kernel.  
+                This is a huge debugging speedup since you only load data once, you do not have to reload it every time you change your code.<br>
+                On the other hand, the debugger is primitive when compared to a full fledged IDE like PyCharm.<br>
+                Also jupyter notebooks are used to prototype your solution.  Once everything works, you'll probably export the salient bits to packages and scripts to be used by other components, like a webservice or dashboard.<br>
+                  <br><br>
+              
+                <strong>References</strong><BR>
+                    <strong><a href="https://pytorch.org/get-started/locally/">Install PyTorch</a></strong> If you have a GPU then also install the appropriate cuda toolkit else select CPU.  Training/Inference on a CPU will be MUCH slower than a GPU<br>
+                    <strong><a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html">Pytorch Introduction</a>
+               <strong><a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf"> Anaconda cheatsheet</a></strong><br>
+                <strong><a href="https://www.youtube.com/watch?v=rSPyvPw0p9k">Using a debugger in a notebook (VERY USEFUL) </a></strong>Did a jupyter cell crash? Check the state using the debugger by typing  %debug in the next cell, then;  u (up a line),d (down a line), p varname (print varname) and q (quit the debug session). <br>                   
+               
+                <strong><a href="https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/">Virtual Environments</a></strong><br>
+               
+                <br>
+                Anaconda and Windows - getting Jupyter Lab up and running in your virtual environment of choice (one of several ways)<BR>
+                    <ol>
+                        <li>Install anaconda</li>
+                        <li>Run 'Anaconda Prompt'(use Windows search to find it)</li>
+                        <li>Create virtual environment and activate it</li>
+                        <li>start jupyter lab</li>
+                    </ol>
+                    A jupyter Lab browser window will appear<br><BR>
+                    Or install VsCode and the python and jupyter extensions and run notebooks in VsCode 
+             </td>
+            <td class="style_white ">
+                <strong><a href="https://github.com/CNUClasses/CPSC471_CODE/blob/master/week_1/1_JupyterUsage.ipynb">How to efficiently navigate a Jupyter Notebook</a></strong> Some keyboard shortcuts, "Magic" commands, how to run shell commands, getting API help, and an introduction to debugging in a Jupyter Notebook<br>
+            </td>
+        </tr>
+ 
+
+                   
+     
+        </table>

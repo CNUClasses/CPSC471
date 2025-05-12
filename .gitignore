@@ -1,0 +1,11 @@
+#no documents
+*.docx
+*.pptx
+
+#these folders
+ARCHIVE/
+Projects/                               
+Quizzes/
+Tests/
+Examples/
+Solution/
