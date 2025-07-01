@@ -18,9 +18,12 @@
         <tr>
             <td class="style_emphasize " colspan="3"> 
                 <ul style="color: #cc0000"> 
-                        <li> Textbooks: None required, but I find the following helpful
+                    Hunter Creech <mark>(Luter 23?)</mark> has dual boot machines configured for this class. The Linux partition has a complete deeplearning dev environment with access to a 24gB Nvidia RTX 4090 GPU.</strong><br>
+                    If you have a desktop GPU that has 24 GB of VRAM or more</strong> Then you can probably run most of the course notebooks locally. (If your GPU is in a laptop then you will not be able to do much given the amount of VRAM in laptop GPUs) <br>
+                       <mark>What about a Mac?</mark> 
+                        <!-- <li> Textbooks: None required, but I find the following helpful
                         <ul>
-                            <!-- <li>'Python for Data Analysis' by Wes McKinney - mostly for pandas help</li>
+                            <li>'Python for Data Analysis' by Wes McKinney - mostly for pandas help</li>
                             <li>'Machine Learning with Python Cookbook' by Chris Albon - short data/ml recipes</li>
                             <li>'Python Machine Learning' by Sebastian Raschka - Excellent machine learning introduction</li>
                             <li><a href='https://blog.dailydoseofds.com/'>Daily Dose of Data Science</a>An approachable blog with lots of relevant content</li>
@@ -37,7 +40,7 @@
             <td class="style_white "><em><strong>Examples</strong></em></td>
         </tr>
         <tr>
-            <td class="style_white "><em>1</em></td>
+            <td class="style_white ">1,2</td>
             <td class="style_white ">
              
                 <strong>Lectures</strong><BR>
@@ -47,6 +50,7 @@
                     Tensors are like np arrays except they can be on CPU or GPU<br>
                     Automatic differentiation <br>
                     Need a AI intro (supervised/unsupervised semi supervised)<br>
+                    Gradient descent simple network (see ) (supervised/unsupervised semi supervised)<br>
                     </ul>
                     <!-- https://cnuclasses.github.io/DATA301/content/lectures/week5/51_ML_types_clustering_introduction.pdf -->
                 <!-- sample your dataset if it's huge to make it faster to iterate over development-->
@@ -54,38 +58,81 @@
                 <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week1/1_Introduction.pdf"> Syllabus and Course Introduction</a></strong><br>
                 <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week1/3_tools.pdf"> Anaconda, Virtual Environments, Jupyter Lab, Optional record keeping tools</a></strong> Tools for this class and some optional tools to help you keep track of information<br>
                 <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week1/3_setup_CPSC471_python_environment_with_notebook_templates.txt"> List of commands to set up a virtual environment, switch to it and then invoke jupyter lab</a></strong>  Plus a bit on configuring notebook templates<br><br>
-                <strong><a href="https://cnuclasses.github.io/CPSC471/content/hotkeys/hotkeys.txt" style="color: #00cc00"> Jupyter Lab shortcuts Keys</a></strong><br>
+                
+
                 Jupyter notebooks are a great way to prototype; you can write a bit of code, test it and change it without having to restart a python kernel.  
                 This is a huge debugging speedup since you only load data once, you do not have to reload it every time you change your code.<br>
-                On the other hand, the debugger is primitive when compared to a full fledged IDE like PyCharm.<br>
-                Also jupyter notebooks are used to prototype your solution.  Once everything works, you'll probably export the salient bits to packages and scripts to be used by other components, like a webservice or dashboard.<br>
-                  <br><br>
+                On the other hand, the jupyterlab debugger is primitive when compared to a full fledged IDE like Vscode or PyCharm.<br><br>
+                <mark>NOTE: jupyter notebooks are used to <u>prototype</u> your solution.  Once everything works, you'll probably export the salient bits to packages and scripts to be used by other components, like a webservice or dashboard.<br>
+                </mark>  <br><br>
               
                 <strong>References</strong><BR>
-                    <strong><a href="https://pytorch.org/get-started/locally/">Install PyTorch</a></strong> If you have a GPU then also install the appropriate cuda toolkit else select CPU.  Training/Inference on a CPU will be MUCH slower than a GPU<br>
-                    <strong><a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html">Pytorch Introduction</a>
-               <strong><a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf"> Anaconda cheatsheet</a></strong><br>
-                <strong><a href="https://www.youtube.com/watch?v=rSPyvPw0p9k">Using a debugger in a notebook (VERY USEFUL) </a></strong>Did a jupyter cell crash? Check the state using the debugger by typing  %debug in the next cell, then;  u (up a line),d (down a line), p varname (print varname) and q (quit the debug session). <br>                   
-               
-                <strong><a href="https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/">Virtual Environments</a></strong><br>
-               
+                    <strong><a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf"> Anaconda cheatsheet</a></strong><br>
+                    <strong><a href="https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/">Virtual Environments</a></strong><br>
+                    <strong><a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html">Pytorch Introduction</a></strong><br><br>
+
+                <strong>Homework</strong><br>
+                    
+                    Please learn the following so you will be able to understand the math behind backpropagation<br>
+                    <strong><a href="https://www.mathsisfun.com/calculus/derivatives-partial.html">Partial Derivatives</a></strong>For a multivariable expression, how does one variable change when all other variables are held constant<br>
+                    <strong><a href="https://www.mathsisfun.com/calculus/chain-rule.html">The chain rule</a></strong> The heart of back propegation<br><br>
+                    <!-- dont use statquest backprop, its a bit confusing in the end
+                     but maybe use the wikipedia 'intuitive explanation' section example -->
+                    Install the following software and verify that it works
+                    <ul>
+                        <li>Install Anaconda and create a virtual environment for this class</li>
+                        <li><a href="https://pytorch.org/get-started/locally/">Install PyTorch</a>If you have a GPU then also install the appropriate cuda toolkit else select CPU.  Training/Inference on a CPU will be MUCH slower than a GPU<br>
+</li>
+                        <li>Install Jupyter Lab in your virtual environment</li>
+                        <li>Create and run a notebook to verify that everything works</li>
+                        <li>Read the syllabus and ask questions if you have any</li>
+                    </ul>                
                 <br>
-                Anaconda and Windows - getting Jupyter Lab up and running in your virtual environment of choice (one of several ways)<BR>
-                    <ol>
-                        <li>Install anaconda</li>
-                        <li>Run 'Anaconda Prompt'(use Windows search to find it)</li>
-                        <li>Create virtual environment and activate it</li>
-                        <li>start jupyter lab</li>
-                    </ol>
-                    A jupyter Lab browser window will appear<br><BR>
-                    Or install VsCode and the python and jupyter extensions and run notebooks in VsCode 
-             </td>
+                    
+                </td>
             <td class="style_white ">
                 <strong><a href="https://github.com/CNUClasses/CPSC471_CODE/blob/master/week_1/1_JupyterUsage.ipynb">How to efficiently navigate a Jupyter Notebook</a></strong> Some keyboard shortcuts, "Magic" commands, how to run shell commands, getting API help, and an introduction to debugging in a Jupyter Notebook<br>
             </td>
         </tr>
- 
+        <tr>
+            <td class="style_white ">3</td>
+            <td class="style_white ">
+                <strong>Data Preparation and PyTorch Workflow</strong><br>
+                <strong>Lectures</strong><br>
+    
+                <strong>Readings</strong><br>
+                <a href="https://scipy.github.io/old-wiki/pages/EricsBroadcastingDoc">Broadcasting in NumPy</a> A very important concept in PyTorch and NumPy<br>
+            </td>
+            <td class="style_white "><em><strong>Examples</strong></em></td>
+        </tr>
+        <tr>
+            <td class="style_white "><em><strong>4</strong></em>
+            
 
-                   
-     
-        </table>
+            </td>
+            <td class="style_white ">
+                <strong>Convolutional Neural Networks (CNN)</strong><br>
+                Lectures<br>
+    
+                Readings<br>
+                <strong><a href="https://www.pinecone.io/learn/series/image-search/cnn/">Visual Guide to Applied Convolution Neural Networks</a></strong><br>
+    
+                <strong><a href="https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks">Convolutional Neural Networks cheatsheet</a></strong> Architecture, explanation,CNN,Pooling,FCL, conv illustrations,CNN types( object detection, localization, YOLO)<br>
+
+                <strong><a href="https://arxiv.org/abs/1712.09913">Visualizing the Loss Landscape of Neural Nets</a></strong> Less bumpy surfaces means its less likely that SGD gets stusk in a local minima<br>
+                <strong><a href="https://imgur.com/a/visualizing-optimization-algos-Hqolp">visualizing optimization algorithms</a>You will notice that Adam converges much faster than SGD<br>
+            </td>
+            <td class="style_white "><em><strong>Examples</strong></em></td>
+            create a loss notebook to illustrate getting sgd to global (not local minima)<br>
+        </tr>
+        <tr>
+            <td class="style_white ">?</td>
+            <td class="style_white ">
+                <strong>Topic</strong><br>
+                <strong>Lectures</strong><br>
+    
+                <strong>Readings</strong><br>
+            </td>
+            <td class="style_white "><em><strong>Examples</strong></em></td>
+        </tr>
+         </table>
