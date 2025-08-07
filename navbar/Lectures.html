@@ -19,7 +19,7 @@
             <td class="style_emphasize " colspan="3"> 
                 <ul style="color: #cc0000"> 
                     <strong>Hardware</strong><br>
-                    Hunter Creech <mark>(Luter 23?)</mark> has dual boot machines configured for this class. The Linux partition has a complete deeplearning dev environment with access to a 24gB Nvidia RTX 4090 GPU.</strong><br>
+                    Hunter Creech <mark>(Luter 221)</mark> has dual boot machines configured for this class. The Linux partition has a complete deeplearning dev environment with access to a 24gB Nvidia RTX 4090 GPU.</strong><br>
                     
                     If you have a desktop GPU that has 24 GB of VRAM or more</strong> Then you can probably run most of the course notebooks locally. (If your GPU is in a laptop then you will not be able to do much given the amount of VRAM in laptop GPUs) <br>
                     If you would like to use cloud providers like Google Colab, Amazon SageMaker, or Microsoft Azure, then please consult <a href="https://pytorch.org/get-started/cloud-partners/">this page</a> for more information. You should prefer this method since it gives you maximum flexibility in machine configuration and you will probably use it professionally.<br>
@@ -46,7 +46,7 @@
             <td class="style_white ">1,2</td>
             <td class="style_white ">
              
-                <strong>Lectures</strong><BR>
+                <!-- <strong>Lectures</strong><BR>
                     <ul> 
                     Python and PyTorch setup <br>
                     Tensor operations <br>
@@ -54,12 +54,12 @@
                     Automatic differentiation <br>
                     Need a AI intro (supervised/unsupervised semi supervised)<br>
                     Gradient descent simple network (see ) (supervised/unsupervised semi supervised)<br>
-                    </ul>
-                    <!-- https://cnuclasses.github.io/DATA301/content/lectures/week5/51_ML_types_clustering_introduction.pdf -->
+                    </ul> 
+                   https://cnuclasses.github.io/DATA301/content/lectures/week5/51_ML_types_clustering_introduction.pdf -->
                 <!-- sample your dataset if it's huge to make it faster to iterate over development-->
 
                 <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week1/1_Introduction.pdf"> Syllabus and Course Introduction</a></strong><br>
-                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week1/3_tools.pdf"> Anaconda, Virtual Environments, Jupyter Lab, Optional record keeping tools</a></strong> Tools for this class and some optional tools to help you keep track of information<br>
+                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week1/3_tools.pdf"> Anaconda, Virtual Environments, Jupyter Lab</a></strong> Tools for this class<br>
                 <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week1/3_setup_CPSC471_python_environment_with_notebook_templates.txt"> List of commands to set up a virtual environment, switch to it and then invoke jupyter lab</a></strong>  Plus a bit on configuring notebook templates<br><br>
                 
 
@@ -69,6 +69,9 @@
                 <mark>NOTE: jupyter notebooks are used to <u>prototype</u> your solution.  Once everything works, you'll probably export the salient bits to packages and scripts to be used by other components, like a webservice or dashboard.<br>
                 </mark>  <br><br>
               
+
+                Build neuron class with backprop<br>
+
                 <strong>References</strong><BR>
                     <strong><a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf"> Anaconda cheatsheet</a></strong><br>
                     <strong><a href="https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/">Virtual Environments</a></strong><br>
@@ -78,8 +81,8 @@
                     
                     Please learn the following so you will be able to understand the math behind backpropagation<br>
                     <strong><a href="https://www.mathsisfun.com/calculus/derivatives-partial.html">Partial Derivatives</a></strong>For a multivariable expression, how does one variable change when all other variables are held constant<br>
-                    <strong><a href="https://www.mathsisfun.com/calculus/chain-rule.html">The chain rule</a></strong> The heart of back propegation<br><br>
-                    <strong><a href="https://www.youtube.com/watch?v=tIeHLnjs5U8&ab_channel=3Blue1Brown">Backpropagation Explained</a></strong><br>
+                    <strong><a href="https://www.mathsisfun.com/calculus/chain-rule.html">The chain rule</a></strong> The heart of back propegation<br>
+                    <strong><a href="https://www.youtube.com/watch?v=tIeHLnjs5U8&ab_channel=3Blue1Brown">Backpropagation Explained</a></strong><br><br>
                     <!-- dont use statquest backprop, its a bit confusing in the end
                      but maybe use the wikipedia 'intuitive explanation' section example -->
                     Install the following software and verify that it works
@@ -98,13 +101,14 @@
                 <strong><a href="https://github.com/CNUClasses/CPSC471_CODE/blob/master/week_1/1_JupyterUsage.ipynb">How to efficiently navigate a Jupyter Notebook</a></strong> Some keyboard shortcuts, "Magic" commands, how to run shell commands, getting API help, and an introduction to debugging in a Jupyter Notebook<br>
             </td>
         </tr>
-        <tr>
-            <td class="style_white ">3</td>
+<!--        <tr>
+            <td class="style_white ">2</td>
             <td class="style_white ">
+                
                 <strong>Data Preparation and PyTorch Workflow</strong><br>
                 <!-- normalizing and why 
                  @ or matmul (lin alg mtrix manip)-->
-                <strong>Lectures</strong><br>
+<!--                <strong>Lectures</strong><br>
     
                 <strong>Readings</strong><br>
                 <a href="https://scipy.github.io/old-wiki/pages/EricsBroadcastingDoc">Broadcasting in NumPy</a> A very important concept in PyTorch and NumPy<br>
@@ -129,7 +133,7 @@
                 <strong><a href="https://imgur.com/a/visualizing-optimization-algos-Hqolp">visualizing optimization algorithms</a>You will notice that Adam converges much faster than SGD<br>
             </td>
             <td class="style_white "><em><strong>Examples</strong></em></td>
-            create a loss notebook to illustrate getting sgd to global (not local minima)<br>
+           
         </tr>
         <tr>
             <td class="style_white ">?</td>
