@@ -15,11 +15,49 @@
                  }
          </style>
          <table style="width: 100%" class="style_noborder ">
-	     
+	     <tr>
+               <td class="style_emphasize " colspan="3">    
+
+                     <strong>Where to access GPUs</strong><br>
+                    Hunter Creech <mark>(Luter 221)</mark> has dual boot machines configured for this class. The Linux partition has a complete deeplearning dev environment with access to a 24gB Nvidia RTX 4090 GPU.</strong><br>
+                    
+                    If you have a desktop GPU that has 24 GB of VRAM or more</strong> Then you can probably run most of the course notebooks locally. (If your GPU is in a laptop then you will not be able to do much given the amount of VRAM in laptop GPUs) <br>
+                    If you would like to use cloud providers like Google Colab, Amazon SageMaker, or Microsoft Azure, then please consult <a href="https://pytorch.org/get-started/cloud-partners/">this page</a> for more information <strong>(these are not free!)</strong>. You should prefer this method since it gives you maximum flexibility in machine configuration and you will probably use it professionally.<br>
+
+               </td>
+         </tr>
           <tr>
             <td class="style_white "><em><strong>Project</strong></em></td>
             <td class="style_white "><em><strong>Due</strong></em></td>
             <td class="style_white "><em><strong>Description</strong></em></td>
+         </tr>
+
+         <tr>	
+            <td class="style_white "><em>1</em></td> 
+            <td class="style_white ">9/11/25</td>
+            <td class="style_white ">
+               Setup a linux based cloud environment for running Jupyter notebooks with GPU support.  Pick any provider (see link above for ideas).<br>
+               Demo to me in person:<ul>
+                  <li>that Pytorch is installed in the cloud machine</li>
+                  <li>that you can SSH into this cloud machine</li>
+                  <li>that it has a gpu (nvidia-smi command will do it)</li>
+                  <li>that you can run a jupyter notebook on the cloud machine</li>               </ul>
+
+
+               Optional: Edit the .bashrc file
+               <ul>
+                  <li> to include an alias for Jupyter Lab so that when you type "jupyter" at the command line it launches jupyter lab</li>
+                  <li> to configure Git with your user.name and user.email</li>
+               </ul>
+               To apply .bashrc changes immediately, run the following command in your terminal:
+
+               <pre><code>source ~/.bashrc</code></pre>
+               
+               As long as your provider preserves your changes to .bashrc accross sessions, your changes will be automatically applied the next time you log in.
+               <br>
+
+               
+          </td> 
          </tr>
            
          
