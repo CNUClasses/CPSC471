@@ -38,8 +38,8 @@
             <td class="style_white ">
                Setup a linux based cloud environment for running Jupyter notebooks with GPU support.  Pick any provider (see link above for ideas).<br>
                Demo to me in person:<ul>
-                  <li>that Pytorch is installed in the cloud machine</li>
-                  <li>that you can SSH into this cloud machine</li>
+                  <li>that Pytorch is installed on the cloud machine</li>
+                  <li>that you can SSH into the cloud machine</li>
                   <li>that it has a gpu (nvidia-smi command will do it)</li>
                   <li>that you can run a jupyter notebook on the cloud machine</li>               </ul>
 
@@ -48,6 +48,9 @@
                <ul>
                   <li> to include an alias for Jupyter Lab so that when you type "jupyter" at the command line it launches jupyter lab</li>
                   <li> to configure Git with your user.name and user.email</li>
+                  <li> to include any other aliases or environment variables that you find useful</li>
+                  <li> to include one directory symlink.  Often these are used to link large external data storage drives.  Here is an example of one I use<br>
+                  <code>ln -s /work/kperkins411/.cache ~/.cache</code></li>
                </ul>
                To apply .bashrc changes immediately, run the following command in your terminal:
 
