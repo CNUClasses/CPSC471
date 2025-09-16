@@ -127,7 +127,7 @@
             <tr>
             <td class="style_white ">3</td>
             <td class="style_white "> 
-                <em><strong>Pytorch Introduction and simple Regression using MLP</strong></em><br><br>
+                <em><strong>Pytorch Introduction and Regression using MLP</strong></em><br><br>
                 <strong>Lectures</strong><br>
                 <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week3/supervised_and_split.pdf">Supervised Training; Splitting a dataset into training, validation and test sets</a><br><br>
 <!-- <strong>Data Preparation and PyTorch Workflow</strong><br>
@@ -165,15 +165,35 @@
         <tr>
             <td class="style_white ">4</td>
             <td class="style_white ">
-                <strong>Classification using simple MLP, Cross Entropy, Loss Functions and Error Surfaces</strong><br>
+                <strong>Classification using MLP, Cross Entropy, Loss Functions and Error Surfaces</strong><br><br>
                 <strong>Lectures</strong><br>
                 <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week4/optimizers_gd_verses_adam.pdf">Optimizers- Gradient Descent (GD) verses Adam</a><br>
-                <a href="https://github.com/CNUClasses/optimizer-visualization">Optimizer Visualization</a> A web based tool to visualize how different optimizers work<br><br>
+                <a href="https://github.com/CNUClasses/optimizer-visualization">Optimizer Visualization</a> A web based tool to visualize how different optimizers work<br><br><br>
+
+                <a href="https://cnuclasses.github.io/DATA301/content/lectures/week10/10_Precision_Recall_F1_Confusion_matrix.pdf">Precision/Recall, F1 Score, Confusion Matrix</a>
+                Why accuracy is a bad metric for unbalanced datasets (spoiler: model can just predict majority class always). Other measures that do a better job of evaluating model performence <br><br>
+ 
                
                 <strong>References</strong><br>
                 <a href="https://www.digitalocean.com/community/tutorials/intro-to-optimization-momentum-rmsprop-adam">Intro to optimization in deep learning: Momentum, RMSProp and Adam</a><br>
 
-                <a href="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week4/gd.gif">Gradient Descent</a> Equal sized (w-grad*lr) steps in the direction of the steepest descent<br> 
+                <a href="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week4/gd.gif">Gradient Descent</a> Equal sized (w-grad*lr) steps in the direction of the steepest descent<br> <br>
+
+                <mark>
+                <strong>Defaults</strong><br>
+                <strong>Criterion (loss function):</strong><br>
+                For regression problems (predicting a number) use MSE Loss.<br>
+                For classification problems (predicting a class) use Cross Entropy Loss.<br><br>
+                <strong>Optimizer (responsible for updating model weights and biases):</strong><br>
+                For both use AdamW, with the defaults first with weight decay=0.01 (AdamW adds weight decay to Adam to help regularize the model)<br><br>
+
+                <strong>Hyperparameters:</strong><br>
+                Batch size: 32, 64, 128, 256 (try these values, smaller batch sizes give better results but take longer to train, larger batch sizes may not fit on GPU)<br>
+                A good default Learning rate is 0.01 -> 0.001  (although we will dump this later when we get to Learning rate annealers)<br>
+                Amount of Data: Try to have at least 1000 samples that are <u>representative of the data you would like to predict</u><br><br>
+                </mark>
+
+            
             </td>
             <td class="style_white ">
                 <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week4/mlp_classification.ipynb">Pytorch MLP predicting a class </a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week4/mlp_classification.ipynb">
