@@ -248,10 +248,13 @@
                 <mark>You dont create CNNs from scratch, you use pre trained models and finetune them to your dataset (also called transfer learning).</mark> This is much faster, takes less data, and lowers the bar in terms of needed expertise.<br>
                 timm has 700+ pre trained models, many SOTA<br><br>
                 
-                How to choose a model for classification:<br>
+                <strong>How to choose a model for classification:</strong><br>
+                <mark>In general prefer models in the following families; convnext, vit, swin (and v2) and EfficientNet (and v2). </mark><br>
+
                 <ul>
                     <li><strong>Accuracy paramount?</strong> Use a larger model like deeper ResNets, larger EfficientNets, or state-of-the-art ViTs.</li>
                     <li><strong>Speed/inference time paramount?</strong> Use a smaller model like MobileNetV3, EfficientNet-lite, or a small ResNet.</li>
+                    <li><strong>Dataset very different from training dataset?</strong> Use a smaller model like vit_small_patch or conv_next_tiny</li>
                 </ul>
                 Larger models are more accurate but take longer to train, are slower, and require more memory and compute. Smaller models are less accurate but faster.<br><br>
 
