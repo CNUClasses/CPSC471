@@ -211,7 +211,7 @@
 
             </td>
             <td class="style_white ">
-                <strong>Convolutional Neural Networks (CNN)</strong><br><br>
+                <strong>Image Classification using Convolutional Neural Networks (CNN)</strong><br><br>
                 <strong>Lectures<br>
                         <a href="https://cnuclasses.github.io/DATA301/content/lectures/week10/10_Precision_Recall_F1_Confusion_matrix.pdf">Precision/Recall, F1 Score, Confusion Matrix</a></strong>
                 Why accuracy is a bad metric for unbalanced datasets (spoiler: model can just predict majority class always). Other measures that do a better job of evaluating model performence <br><br>
@@ -238,13 +238,43 @@
 
                  <strong><a style="color: #00cc00" href="https://github.com/CNUClasses/471_code/blob/master/week5/conv2d_practice.ipynb">PRACTICE:Convolution practice problems </a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week5/conv2d_practice.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Practice using Filter size, Stride, Padding, dilation to calculate output size. Additional problems show parameter counts compared to an MLP implementation<br>
-
-
-                
-
             </td>
            
         </tr>
+        <tr>
+            <td class="style_white ">6</td>
+            <td class="style_white ">
+                <strong>Fine tuning pre trained models for Image Classification using Pytorch Image Models (timm)</strong><br>
+                <mark>You dont create CNNs from scratch, you use pre trained models and finetune them to your dataset (also called transfer learning).</mark> This is much faster, takes less data, and lowers the bar in terms of needed expertise.<br>
+                timm has 700+ pre trained models, many SOTA<br><br>
+                
+                How to choose a model for classification:<br>
+                <ul>
+                    <li><strong>Accuracy paramount?</strong> Use a larger model like deeper ResNets, larger EfficientNets, or state-of-the-art ViTs.</li>
+                    <li><strong>Speed/inference time paramount?</strong> Use a smaller model like MobileNetV3, EfficientNet-lite, or a small ResNet.</li>
+                </ul>
+                Larger models are more accurate but take longer to train, are slower, and require more memory and compute. Smaller models are less accurate but faster.<br><br>
+
+                NOTE:<br>
+                <ul>
+                    <li>Use <strong>timm.list_models()</strong> to see all available models. You can filter by architecture (e.g., <code>timm.list_models('*resnet*')</code>).</li>
+                    <li>Use <strong>timm.create_model('model_name', pretrained=True, num_classes=num_classes)</strong> to create a model. Make sure you set <strong>num_classes</strong> to the number of classes in your dataset. Also make sure you set <strong>pretrained=True</strong> when you create the model for fine tuning. Otherwise you have to train the model from scratch.</li>
+                    <li>Examine the default configuration of a model with <strong>model.default_cfg</strong> to understand expected input size, normalization parameters (mean and std), and other relevant details.</li>
+                </ul>
+
+                <strong>Readings</strong><br>
+                <strong><a href="https://www.kaggle.com/code/jhoward/the-best-vision-models-for-fine-tuning">The best vision models for fine-tuning</a></strong> This notebook compares many different models.  All are fine-tuned on two differnt datasets;  
+				<a href="https://www.robots.ox.ac.uk/~vgg/data/pets/"> Oxford IIT-Pet</a> and then <a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/data">Kaggle planet (space images)</a>.<br>
+
+            </td>
+            <td class="style_white ">
+                 <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb">Classify rice disease based on image</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> First fine tuning example with typical pytorch workflow using Kaggle dataset.  <br>
+
+
+            </td>
+        </tr>
+
 <!--        <tr>
             <td class="style_white ">?</td>
             <td class="style_white ">
