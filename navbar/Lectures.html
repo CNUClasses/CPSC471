@@ -254,15 +254,15 @@
                 (BTW resnets are in a lot of tutorials but should be avoided since they are outperformed by the above model catagories)<br>
 
                 <ul>
-                    <li><strong>Accuracy paramount?</strong> Generally use a larger model like EfficientNets, state-of-the-art ViTs or convnext</li>
-                    <li><strong>Speed/inference time paramount?</strong> Use a smaller model in convnext, MobileNetV3 or EfficientNet-lite</li>
+                    <li><strong>Accuracy paramount?</strong> Generally use a larger model</li>
+                    <li><strong>Speed/inference time paramount or running on edge device?</strong> Use a smaller model </li>
                     <li><strong>Dataset very different from training dataset?</strong> Use a smaller model like vit_small_patch or conv_next_tiny</li>
                 </ul>
                 Larger models are more accurate but take longer to train, are slower, and require more memory and compute. Smaller models are less accurate but faster.<br><br>
 
                 NOTE:<br>
                 <ul>
-                    <li>Use <strong>timm.list_models()</strong> to see all available models. You can filter by architecture (e.g., <code>timm.list_models('*resnet*')</code>).</li>
+                    <li>Use <strong>timm.list_models()</strong> to see all available models. You can filter by architecture (e.g., <code>timm.list_models('*vit*')</code></li>
                     <li>Use <strong>timm.create_model('model_name', pretrained=True, num_classes=num_classes)</strong> to create a model. Make sure you set <strong>num_classes</strong> to the number of classes in your dataset. Also make sure you set <strong>pretrained=True</strong> when you create the model for fine tuning. Otherwise you have to train the model from scratch.</li>
                     <li>Examine the default configuration of a model with <strong>model.default_cfg</strong> to understand expected input size, normalization parameters (mean and std), and other relevant details.</li>
                 </ul>
@@ -270,6 +270,8 @@
                 <strong>Readings</strong><br>
                 <strong><a href="https://www.kaggle.com/code/jhoward/the-best-vision-models-for-fine-tuning">The best vision models for fine-tuning</a></strong> This notebook compares many different models.  All are fine-tuned on two differnt datasets;  
 				<a href="https://www.robots.ox.ac.uk/~vgg/data/pets/"> Oxford IIT-Pet</a> and then <a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/data">Kaggle planet (space images)</a>.<br>
+
+                 <strong><a href="https://github.com/huggingface/pytorch-image-models?tab=readme-ov-file">pytorch-image-models (timm)</a></strong>A collection of state-of-the-art (SOTA) computer vision models, pretrained weights, and tools for building, training, and validating deep learning models<br>
 
             </td>
             <td class="style_white ">
