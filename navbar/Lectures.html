@@ -22,6 +22,7 @@
                     Hunter Creech <mark>(Luter 221)</mark> has dual boot machines configured for this class. The Linux partition has a complete deeplearning dev environment with access to a 24gB Nvidia RTX 4090 GPU.</strong><br>
                     
                     If you have a desktop GPU that has 24 GB of VRAM or more</strong> Then you can probably run most of the course notebooks locally. (If your GPU is in a laptop then you will not be able to do much given the amount of VRAM in laptop GPUs) <br>
+                    <!-- You can use cloud providers such as lambda labs or digital ocean. -->
                     If you would like to use cloud providers like Google Colab, Amazon SageMaker, or Microsoft Azure, then please consult <a href="https://pytorch.org/get-started/cloud-partners/">this page</a> for more information <strong>(these are not free!)</strong>. You should prefer this method since it gives you maximum flexibility in machine configuration and you will probably use it professionally.<br>
                        <!-- <mark>What about a Mac?</mark>  -->
                         <!-- <li> Textbooks: None required, but I find the following helpful
@@ -173,6 +174,7 @@
                 <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week4/softmax_crossentropy_loss.pdf">Softmax Activation and Cross Entropy loss</a>Softmax turns scores into probabilities, cross-entropy tells us how wrong we are<br><br>
                 <!-- Tell then how to calculate MSE for classification if softmaxed logits=[.95,.04,.01] and correct answer is the second class with this one hot-> [0,1,0] 
                  then MSE=(1/2)*( (.95-0) + (04-1) + (.01-0))**2-->
+                 <!-- Visualize a model https://netron.app/-->
                
                 <strong>References</strong><br>
                 <a href="https://www.digitalocean.com/community/tutorials/intro-to-optimization-momentum-rmsprop-adam">Intro to optimization in deep learning: Momentum, RMSProp and Adam</a><br>
@@ -319,7 +321,11 @@
                 - mAP-average precision when considering all classes that the detector can detect <br> 
                 - IOU Intersection Over Union- 0<=IOU<=1, how well a predicted bounding box lines up with the ground truth bounding box. IOU of .5 is often good enough.<br>
 
-                <strong><a href="https://arxiv.org/abs/2504.13099">RF-DETR Object Detection vs YOLOv12</a>  RF-DETR is looking very strong.  Is YOLO dethroned?<br>
+                
+                 <strong><a href="https://farukalamai.substack.com/p/rf-detr-vs-yolov12-a-comprehensive">RF-DETR vs YOLOv12: A Comprehensive Comparison of Transformer and CNN-Based Object Detection</a> As of now, YOLO V12 is faster at inference, prefer for real time applications (live video, autonomous vehicles).  Otherwise RF-DETR<br>
+                 <!-- the above link is saved as a pdf in the week 7 repo -->
+                  <strong><a href="https://arxiv.org/abs/2504.13099">RF-DETR Object Detection vs YOLOv12</a></strong>  RF-DETR is looking very strong.  Is YOLO dethroned?<br><br>
+
                 <strong><a href="https://www.youtube.com/watch?v=v6lt0cGSHBI">Non Maximum Suppression (NMS) explained in detail </a></strong><br><br>
         <ul style="color: #cc0000">
             <li><strong >Test 1, 10/20/25 includes all content on course website through week 8 and projects 1, 2 and 3</strong></li>
@@ -348,33 +354,70 @@
 
             </td>
         </tr>
-<!--        <tr>
-            <td class="style_white ">?</td>
-            <td class="style_white ">
-                <strong>Topic</strong><br>
-                <strong>Lectures</strong><br>
-    
-                <strong>Readings</strong><br>
-            </td>
-            <td class="style_white "><em><strong>Examples</strong></em></td>
-        </tr>
-
-<!--        <tr>
+       <tr>
             <td class="style_white ">8</td>
             <td class="style_white ">
-                <strong>Topic</strong><br>
-                   LLM introduction
-                   context= number of tokens that can be fed in at a time<br>
-                   1 token ~ 3/4 word<br>
-                   1 page ~ 500 words<br>
-                   so LLM with 36000 token context can handle (36000*3/4) ~ 27000 words or (27000/500)  ~ 54 pages<br>
+                <strong>Transformer/LLM Introduction:</strong><br><br>
+                <strong>Lectures</strong><br>
+                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week8/BPE_example.pdf">Byte-pair encoding example</a></strong> Used by many tokenizers<br><br>
+               <strong><a href="https://learn.deeplearning.ai/courses/attention-in-transformers-concepts-and-code-in-pytorch/lesson/han2t/introduction">Attention in Transformers: Concepts and Code in PyTorch- Introduction</a> PLEASE WATCH!</strong><br><br>
+                <!-- <a href="https://learn.deeplearning.ai/courses/attention-in-transformers-concepts-and-code-in-pytorch/lesson/kxluu/coding-self-attention-in-pytorch">Attention in Transformers: Concepts and Code in PyTorch- Coding Self Attention</a><br> -->
 
+                <!-- 
+             
+                shows gLoVE and plotting words
+                 https://learn.deeplearning.ai/courses/embedding-models-from-architecture-to-implementation/lesson/obyoa/contextualized-token-embeddings 
+                 https://www.deep-ml.com/problems
+                 -->
+    
+                <strong>Readings</strong><br>
+                 
+
+                <a href="https://arxiv.org/abs/1706.03762">Attention is all you need</a> The original transformer paper from 2017<br>
+                <a href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a> Excellent visual explanation of transformers<br>
+                <a href="https://huggingface.co/learn/llm-course/en/chapter6/5">Byte Pair Encoding (BPE)</a> Explanation of BPE tokenization<br>
+            </td>
+            <td class="style_white ">
+                <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week8/embeddings_demo.ipynb">Embeddings: Glove and BERT </a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week8/embeddings_demo.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Insight into embeddings. GloVe does not have contextual information, BERT does. For example, given the sentences "The bat flew" and "The bat swung", 
+                the word 'bat' means an animal in the first and a baseball bat in the second. Glove will not detect this and think they are identical, BERT will understand the context. This is because BERT embeddings were trained using attention.<br>
+
+
+            </td>
+        </tr>
+
+                <!-- 
+ -->
+
+ <!--   
+<tr>
+            <td class="style_white ">9</td>
+            <td class="style_white ">
+                <strong>LLMs</strong><br><br>
+                <strong>Lectures</strong><br>
+    
+                <strong>Readings</strong><br>
+                <a href="https://www.youtube.com/watch?v=bZQun8Y4L2A&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&index=9">State of GPT</a> A good overview of LLMs and GPT<br>
+
+                <a href="https://learn.deeplearning.ai/courses/how-transformer-llms-work/lesson/nfshb/introduction">How transformer LLMs work</a> <br>
+            </td>
+            <td class="style_white "><em><strong>Examples</strong></em></td>
+        </tr>
+
+        <tr>
+            <td class="style_white ">?</td>
+            <td class="style_white ">
+                <strong>Transformer introduction, LLMs</strong><br><br>
                 <strong>Lectures</strong><br>
     
                 <strong>Readings</strong><br>
             </td>
             <td class="style_white "><em><strong>Examples</strong></em></td>
         </tr>
+
+ 
+
+<!--        
         <!-- <tr>
             <td class="style_white ">?</td>
             <td class="style_white ">
@@ -409,4 +452,27 @@
          </table>
 
          <!-- <a href="https://github.com/poloclub/wizmap?tab=readme-ov-file">WizMap embedding visualizer</a> a local tool for visualizing embeddings<br>
-          and here is a notebook using IMDB embeddings for visualization https://github.com/poloclub/wizmap/blob/main/example/imdb.ipynb-->
+          and here is a notebook using IMDB embeddings for visualization https://github.com/poloclub/wizmap/blob/main/example/imdb.ipynb  
+        
+          Possibly later? <a href="https://farukalamai.substack.com/p/zero-shot-object-detection-detecting">Zero-Shot Object Detection: Detecting Objects You’ve Never Seen Before</a><br> 
+          <a href="https://tiktokenizer.vercel.app/">Tokenization Visualizer</a> A tool for visualizing tokenization
+
+          whats missing
+
+          resnet and why the residual connection smooths loss landscape and allows for deep models because gradients no longer vanish
+            why batch norm works- in detail
+           unets
+              diffusion models
+
+        sentiment classification with LLMs
+        named entity recognition
+        paraphrase identification
+
+        text generation with LLMs
+        summarization with LLMs
+        code generation with LLMs
+        embeddings and vector databases
+        RAG
+
+
+
