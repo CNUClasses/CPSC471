@@ -521,15 +521,18 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
         <tr>
             <td class="style_white ">11</td>
             <td class="style_white ">
-                <strong>Hugging Face</strong><br><br>
+                <strong>Learning Rate Schedulers, Fine Tune a LLM, RAG intro</strong><br><br>
                 <strong>Lectures</strong><br>
                     <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Learning-Rate-Schedulers.pdf">Learning Rate Schedulers: Cosine Annealing & One Cycle</a></strong> Used heavily with LLMs (and with most other DL models). <mark>With these you do not do early stopping.</mark><br><br>
-
+                    
                 <strong>Readings</strong><br>
             </td>
             <td class="style_white ">
-                If you want to fine tune a hugging face transformer model, you can either use the <strong>Trainer</strong> class which is a high level wrapper around a pytorch training loop, or you can implement your own training loop using pytorch. Both are demonstrated below.<br><br>
-                              <a href="https://github.com/CNUClasses/471_code/blob/master/week10/Sentence_Classification_TweetEval_Sentiment_Frozen_vs_FT.ipynb.ipynb">Multiclass sentiment classification</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week10/HF_Pipelines_ZeroShot_Beginner.ipynb">
+                Fine tuning a hugging face encoder. Either use the <strong>Trainer</strong> class which is a high level wrapper around a pytorch training loop, or implement a training loop using pytorch. Both are demonstrated below.<br><br>
+
+                These notebooks demonstrate sentiment classification using DistilBERT. The classification head is applied to the transformer-enhanced <span class="gray-highlight">[CLS]</span> token representation. This approach generalizes to sequence-pair classification tasks as well. <br>
+                <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week11/encoder_ft.png" alt="standard" style="max-width:500px;  margin:10px 0; vertical-align:middle;"><br>
+                              <a href="https://github.com/CNUClasses/471_code/blob/master/week10/Sentence_Classification_TweetEval_Sentiment_Frozen_vs_FT.ipynb">Multiclass sentiment classification</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week10/HF_Pipelines_ZeroShot_Beginner.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Fine tuning 🤗 Transformers using Trainer (a comprehensive wrapper around a pytorch training loop)<br>
 
  <a href="https://github.com/CNUClasses/471_code/blob/master/week10/Sentence_Classification_TweetEval_Sentiment_PyTorchLoop.ipynb">Multiclass sentiment classification with traditional PyTorch training loop</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week10/Sentence_Classification_TweetEval_Sentiment_PyTorchLoop.ipynb">
