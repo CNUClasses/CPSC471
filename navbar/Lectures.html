@@ -472,6 +472,8 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 <strong>Note</strong>: The above approach functions correctly but does not account for batch size or whether you are fine-tuning only the classification head or the entire model. A more practical method is to adjust the batch size
                 dynamically by monitoring GPU memory usage with <span class="gray-highlight">watch -n 1 nvidia-smi</span> in a terminal window.<br><br>
                 <a href="https://huggingface.co/learn/llm-course/en/chapter1/1">Introduction to LLMs by Hugging Face</a><br>
+
+                <a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation">Retrieval-Augmented Generation</a><br>
             
               <!-- <a href="https://tensorwave.com/blog/estimating-llm-inference-memory-requirements">Estimating LLM Memory</a>Estimate memory inference requirements for training of large language models (LLMs) based on model size, sequence_length, batch_size, and kv-caching.<br><br>
               Note: KV caching occurs during multiple token generation steps and <mark>only happens in the decoder</mark> (i.e., in decoder-only models like GPT, or in the decoder part of encoder-decoder models). Encoder only models like BERT are not generative and therefore do not have KV caching.<br>
@@ -523,10 +525,13 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
             <td class="style_white ">
                 <strong>Fine Tune a LLM, Prompting, Learning Rate Schedulers, RAG intro</strong><br><br>
                 <strong>Lectures</strong><br>
-                    <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Learning-Rate-Schedulers.pdf">Learning Rate Schedulers: Cosine Annealing & One Cycle</a></strong> Used heavily with LLMs (and with most other DL models). <mark>With these you do not do early stopping.</mark><br><br>
-                    <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Prompting-Large-Language-Models-with-Hugging-Face.pdf">Introduction to LLM Prompting with the Hugging Face API</a></strong> An introduction to prompting large language models (LLMs) using the Hugging Face Inference API. <br>
+                    <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Learning-Rate-Schedulers.pdf">Learning Rate Schedulers: Cosine Annealing & One Cycle</a></strong> Used heavily with LLMs (and with most other DL models). <mark>With these you do not do early stopping.</mark><br>
+                    <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Prompting-Large-Language-Models-with-Hugging-Face.pdf">Introduction to LLM Prompting with the Hugging Face API</a></strong> An introduction to prompting large language models (LLMs) using the Hugging Face Inference API. <br><br>
+                    <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Retrieval-Augmented-Generation-RAG.pdf">Introduction to Retrieval-Augmented Generation (RAG)</a></strong> An introduction to Retrieval-Augmented Generation (RAG) using the Hugging Face Inference API. <br><br>
+
                     
                 <strong>Readings</strong><br>
+                <strong><a href="https://huggingface.co/docs/transformers/en/tasks/prompting">Hugging Face - Prompt Engineering</a><br>
             </td>
             <td class="style_white ">
                 Fine tuning a hugging face encoder. Either use the <strong>Trainer</strong> class which is a high level wrapper around a pytorch training loop, or implement a training loop using pytorch. Both are demonstrated below.<br><br>
@@ -543,12 +548,16 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
 
                             <a href="https://github.com/CNUClasses/471_code/blob/master/week10/Sentence_Classification_TweetEval_Sentiment_PyTorchLoop.ipynb">Multiclass sentiment classification with traditional PyTorch training loop</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week10/Sentence_Classification_TweetEval_Sentiment_PyTorchLoop.ipynb">
                             <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Same as above, only using a traditional pytorch training loop<br><br>
+    
                         </td>
                     </tr>
                 </table>
 
                  <a href="https://github.com/CNUClasses/471_code/blob/master/week11/LLM_Prompting_HF_Basics.ipynb">LLM Prompting Basics with the 🤗 Hugging Face Inference API</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week11/LLM_Prompting_HF_Basics.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> An introduction to prompting large language models (LLMs) using the Hugging Face Inference API. Covers basic prompt engineering techniques, including zero-shot and few-shot prompting.<br>
+                <br>
+                <a href="https://github.com/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">Embeddings & Cosine Similarity: A Hands-On Mini‑Lab</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> An introduction to embeddings and cosine similarity<br><br>
 
             </td>
         </tr>
