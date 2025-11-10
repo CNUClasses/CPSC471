@@ -596,10 +596,12 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
             </td>
             <td class="style_white ">
                 <!-- weaviate is hard to set up and hard to use verses chroma so we will use chroma, BUT weaviate will do hybrid search automatically, chromaDB will not<br><br> -->
-                 <strong>NOTE: The following 2 projects require pdfs in the ./pdf directory</strong><br>
- 
+                 <strong>NOTE: The following 2 projects require pdfs in the ./pdf directory</strong><br><br>
+                <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/vector_upsert_pipeline.png" alt="standard" style="max-height:100px;  margin:10px 0; vertical-align:middle;"><br>
+
                 <a href="https://github.com/CNUClasses/471_code/blob/master/week12/RAG_Lab_langchain_PDF_Chunk_Embed_Chroma.ipynb">Chunking pdfs into a persistant ChromaDB vector database</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/RAG_Lab_langchain_PDF_Chunk_Embed_Chroma.ipynb">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>Fixed is fast but does not respect semantic (or even sentence) boundaries.  LLMs should be able to split documents into chunks that capture one topic<br><br>
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>Fixed is fast but does not respect semantic (or even sentence) boundaries.  LLMs should be able to split documents into chunks that capture one topic<br><br><br>
+
 
                 <a href="https://github.com/CNUClasses/471_code/blob/master/week12/RAG_Lab2_Retrieve_Rerank_HFLLM.ipynb">Retreiveing, reranking, building </a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/RAG_Lab2_Retrieve_Rerank_HFLLM.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>Implements a compact RAG pipeline using only Hugging Face Models: it embeds a user query, retrieves candidates from a Chroma collection, reranks them, and generates a grounded answer with a LLM.  <br><br>
