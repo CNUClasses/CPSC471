@@ -245,7 +245,8 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 <strong><a href="https://www.pinecone.io/learn/series/image-search/cnn/">Visual Guide to Applied Convolution Neural Networks</a></strong>This is excellent.<br>
     
                 <strong><a href="https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks">Convolutional Neural Networks cheatsheet</a></strong> Architecture, explanation,CNN,Pooling,FCL, conv illustrations,CNN types( object detection, localization, YOLO)<br>
-                    <!-- https://cs231n.github.io/convolutional-networks/-->
+             <strong><a href="https://cnuclasses.github.io/DATA301/content/lectures/week10/thepowerofbatchnorm.jpeg">The power of Batch Normalization</a></strong>Stabilizes gradients,speeds up learning, improves generalization.<br>
+                <!-- https://cs231n.github.io/convolutional-networks/-->
                 
                 <!-- <strong><a href="https://arxiv.org/abs/1712.09913">Visualizing the Loss Landscape of Neural Nets</a></strong> Less bumpy surfaces means its less likely that SGD gets stusk in a local minima<br> -->
            </td>
@@ -473,7 +474,6 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 dynamically by monitoring GPU memory usage with <span class="gray-highlight">watch -n 1 nvidia-smi</span> in a terminal window.<br><br>
                 <a href="https://huggingface.co/learn/llm-course/en/chapter1/1">Introduction to LLMs by Hugging Face</a><br>
 
-                <a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation">Retrieval-Augmented Generation</a><br>
             
               <!-- <a href="https://tensorwave.com/blog/estimating-llm-inference-memory-requirements">Estimating LLM Memory</a>Estimate memory inference requirements for training of large language models (LLMs) based on model size, sequence_length, batch_size, and kv-caching.<br><br>
               Note: KV caching occurs during multiple token generation steps and <mark>only happens in the decoder</mark> (i.e., in decoder-only models like GPT, or in the decoder part of encoder-decoder models). Encoder only models like BERT are not generative and therefore do not have KV caching.<br>
@@ -532,6 +532,8 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                     
                 <strong>Readings</strong><br>
                 <strong><a href="https://huggingface.co/docs/transformers/en/tasks/prompting">Hugging Face - Prompt Engineering</a><br>
+                <mark><a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation">Retrieval-Augmented Generation</a>EXCELLENT! Covers core RAG material and its relation to modern hybrid search (RAG plus keyword retrieval). Note: Hybrid search is not covered in this course.</mark><br>
+                    
             </td>
             <td class="style_white ">
                 Fine tuning a hugging face encoder. Either use the <strong>Trainer</strong> class which is a high level wrapper around a pytorch training loop, or implement a training loop using pytorch. Both are demonstrated below.<br><br>
@@ -561,9 +563,105 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
 
             </td>
         </tr>
+        <tr>
+            <td class="style_white ">12</td>
+            <td class="style_white ">
+                <strong> Vector Search Algorithms, Chunking Data, Vector Databases (Chroma), Rerankers  </strong><br><br>
+                <strong>Lectures</strong><br>
+                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week12/Similarity_Search_kNN_IVF_HNSW.pdf">Vector DB search algorithm insights</a></strong> or how to quickly and effeciently compare millions of vectors to a query<br>
 
-<!--        <tr>
-            <td class="style_white ">?</td>
+                <!-- Chunking Data for RAG - covered in RAG intro<br>
+                KNN scaling, ANN, HNSW - create short lecture slides<br>
+                Vector Databases (Chroma) - demo 
+                demo chunking, upserting into datastore, emphasize chroma is OK for learning, better option is Weviate but harder to set up and use.  Better because it does something called hybrid search<br><br>
+                Rerankers -explanation
+                 -->
+                
+                <br>
+
+            <ul style="color: #cc0000">
+                <strong >Test 2, 11/24/25 includes all content on course website from week 7 to week 13 and  project 4</strong>
+                <li>You may bring 1 sheet of paper with notes on both sides if you like. No other resources are allowed.</li> 
+                <li> WATCH THIS SPACE FOR REQUIREMENTS</li>
+                <!-- <li>Be able to explain how transformers work, including self-attention.</li>
+                <li>Be able to explain how LLMs are trained and how they generate text.</li>
+                <li>Be able to explain how to fine tune a LLM using Hugging Face.</li>
+                <li>Be able to explain what RAG is and how it works.</li>
+                <li>Be able to explain how vector databases work and how to use them.</li>-->
+            </ul>
+    
+                <strong>Readings</strong><br>
+                <strong><a href="https://www.pinecone.io/learn/series/faiss/hnsw/">HNSW: Hierarchical Navigable Small World Graphs</a></strong>A detailed explanation of HNSW, a popular approximate nearest neighbor search algorithm used in vector databases.<br><br>
+            </td>
+            <td class="style_white ">
+                <!-- weaviate is hard to set up and hard to use verses chroma so we will use chroma, BUT weaviate will do hybrid search automatically, chromaDB will not<br><br> -->
+                 <strong>NOTE: The following 2 projects require pdfs in the ./pdf directory</strong><br>
+ 
+                <a href="https://github.com/CNUClasses/471_code/blob/master/week12/RAG_Lab_langchain_PDF_Chunk_Embed_Chroma.ipynb">Chunking pdfs into a persistant ChromaDB vector database</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/RAG_Lab_langchain_PDF_Chunk_Embed_Chroma.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>Fixed is fast but does not respect semantic (or even sentence) boundaries.  LLMs should be able to split documents into chunks that capture one topic<br><br>
+
+                <a href="https://github.com/CNUClasses/471_code/blob/master/week12/RAG_Lab2_Retrieve_Rerank_HFLLM.ipynb">Retreiveing, reranking, building </a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/RAG_Lab2_Retrieve_Rerank_HFLLM.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>Implements a compact RAG pipeline using only Hugging Face Models: it embeds a user query, retrieves candidates from a Chroma collection, reranks them, and generates a grounded answer with a LLM.  <br><br>
+
+            </td>
+        </tr>
+
+<!--        
+        <tr>
+            <td class="style_white ">13</td>
+            <td class="style_white ">
+                <strong>the full RAG pipeline, Evaluation</strong><br><br>
+                <strong>Lectures</strong><br>
+                <a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation/lesson/558u1/evaluating-retrieval">Evaluating Retrieval</a>A good overview of how to evaluate retrieval systems, Precision, Recall, MRR, <br><br>
+                <!-- see google drive for above slides -->
+
+<!--                Rerankers<br>
+                Full RAG pipeline<br>
+                Generating synthetic data for testing.<br>
+                Evaluation<br><br>
+
+                <strong>Readings</strong><br>
+                <a href="https://docs.ragas.io/en/stable/getstarted/rag_eval/">RAGAs generating synthetic data using an LLM</a><br>
+
+
+            </td>
+            <td class="style_white ">
+                create evaluation notebook with examples
+            </td>
+        </tr> 
+        <tr>
+            <td class="style_white ">14</td>
+            <td class="style_white ">
+                <strong>TEST 2 and 🦃 Thanksgiving Break</strong><br><br>
+            </td>
+            <td class="style_white "></td>
+        </tr>         
+        <tr>
+            <td class="style_white ">15</td>
+            <td class="style_white ">
+                <strong>RAG improvement-Fine Tuning Hugging Face Embedding Models</strong><br><br>
+                <strong>Lectures</strong><br>
+                Why/when- when domain is specialized (legal, medical)<br>
+                Risks? Catastrophic forgetting
+                loss function - MultipleNegativesRankingLoss(MNRL)<br>
+                Mining Hard negatives to expand Dataset<br>
+                FineTune Embedding Model with HF Trainer<br>
+
+                <!-- Missing content:
+                Prompting with context, verses PEFT- what fine tuning does for you
+                RAG query expansion
+                Quantization
+                Agents
+                Custom Loss functions
+                Pipelines
+                PEFT -->
+
+<!--                <strong>Readings</strong><br>
+            </td>
+            <td class="style_white "></td>
+        </tr>           
+<tr>
+ <!--           <td class="style_white ">?</td>
             <td class="style_white ">
                 <strong>Transformer introduction, LLMs</strong><br><br>
                 <strong>Lectures</strong><br>
