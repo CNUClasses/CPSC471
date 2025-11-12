@@ -17,6 +17,7 @@
         .gray-text {
             color: gray;
         }
+        .inner-table, .inner-table td, .inner-table th { border: none; }
         .code-like-text {
             color: #666; /* A common dark gray for code */
             font-family: monospace; /* Optional: for a more code-like appearance */
@@ -25,7 +26,6 @@
         background-color: lightgray;
         }
     </style>
-     </style>
     <table style="width: 100%" class="style_noborder ">
         <tr>
             <td class="style_emphasize " colspan="3"> 
@@ -537,12 +537,12 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
             </td>
             <td class="style_white ">
                 Fine tuning a hugging face encoder. Either use the <strong>Trainer</strong> class which is a high level wrapper around a pytorch training loop, or implement a training loop using pytorch. Both are demonstrated below.<br><br>
-                <table class="plain">
-                    <tr class="plain">
-                        <td class="plain">
+                <table class="inner-table">
+                    <tr >
+                        <td >
                             <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week11/encoder_ft.png" alt="standard" style="max-height:200px;  margin:10px 0; vertical-align:middle;"></td>
                         </td>
-                        <td class="plain">
+                        <td >
                             <p>These notebooks demonstrate sentiment classification using DistilBERT. The classification head is applied to the transformer-enhanced <span class="gray-highlight">[CLS]</span> token representation. This approach generalizes to sequence-pair classification tasks as well. </p>
                     
                             <a href="https://github.com/CNUClasses/471_code/blob/master/week10/Sentence_Classification_TweetEval_Sentiment_Frozen_vs_FT.ipynb">Multiclass sentiment classification</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week10/HF_Pipelines_ZeroShot_Beginner.ipynb">
@@ -604,28 +604,28 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                 <!-- weaviate is hard to set up and hard to use verses chroma so we will use chroma, BUT weaviate will do hybrid search automatically, chromaDB will not<br><br> -->
                  <strong>NOTE: The following 2 projects require pdfs in the ./pdf directory</strong><br><br>
                 <!-- <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/vector_upsert_pipeline.png" alt="standard" style="max-height:100px;  margin:10px 0; vertical-align:middle;"><br> -->
-                <table class="plain">
-                    <tr class="plain">
-                        <td class="plain">
+                <table class="inner-table">
+                    <tr >
+                        <td >
                             <a href="https://github.com/CNUClasses/471_code/blob/master/week12/RAG_Lab_langchain_PDF_Chunk_Embed_Chroma.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/vector_upsert_pipeline.png" alt="standard" style="max-height:100px;  margin:10px 0; vertical-align:middle;"></a>
                         </td>
-                        <td class="plain">
+                        <td >
                             <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/RAG_Lab_langchain_PDF_Chunk_Embed_Chroma.ipynb">
                             <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>
                         </td>
-                        <td class="plain">
+                        <td >
                             Fixed is fast but does not respect semantic (or even sentence) boundaries.  LLMs should be able to split documents into chunks that capture one topic
                         </td>
                     </tr>
-                    <tr class="plain">
-                        <td class="plain">
+                    <tr>
+                        <td >
                             <a href="https://github.com/CNUClasses/471_code/blob/master/week12/RAG_Lab2_Retrieve_Rerank_HFLLM.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/complete_RAG_pipeline.png" alt="standard" style="max-height:350px;  margin:10px 0; vertical-align:middle;"></a>
                         </td>
-                        <td class="plain">
+                        <td >
                             <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/RAG_Lab2_Retrieve_Rerank_HFLLM.ipynb">
                             <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>
                         </td>
-                        <td class="plain">
+                        <td >
                             Implements a compact RAG pipeline using only Hugging Face Models: it embeds a user query, retrieves candidates from a Chroma collection, reranks them, and generates a grounded answer with a LLM.
                         </td>
                     </tr>
