@@ -583,7 +583,7 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
         <tr>
             <td class="style_white ">12</td>
             <td class="style_white ">
-                <strong> Vector Search Algorithms, Chunking Data, Vector Databases (Chroma), Rerankers  </strong><br><br>
+                <strong> Vector Search Algorithms, Chunking Data, Vector Databases (Chroma), Rerankers, Full RAG pipeline  </strong><br><br>
                 <strong>Lectures</strong><br>
                 <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week12/Similarity_Search_kNN_IVF_HNSW.pdf">Vector DB search algorithm insights</a></strong> or how to quickly and effeciently compare millions of vectors to a query<br>
 
@@ -613,7 +613,7 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
     
                 <strong>Readings</strong><br>
                 <strong><a href="https://www.pinecone.io/learn/series/faiss/hnsw/">HNSW: Hierarchical Navigable Small Worlds</a></strong>A detailed explanation of HNSW, a popular approximate nearest neighbor search algorithm used in vector databases.<br><br>
-                  <strong><a href="https://sbert.net/docs/quickstart.html#sentence-transformer">Sentence Transformer-QuickStart</a></strong>Introduction to bi-encoders and cross encoders<br>
+                  <strong><a href="https://sbert.net/docs/quickstart.html#sentence-transformer">Sentence Transformer-QuickStart</a></strong>Introduction to bi-encoders and cross encoders<br><br>
             <strong><a href="Finding the Best Chunking Strategy for Accurate AI Responses">NVIDIA: Finding the Best Chunking Strategy for Accurate AI Responses</a></strong> An in-depth look at various chunking strategies for RAG systems and their impact on response accuracy.<br>
                 
                 <ul>
@@ -664,19 +664,18 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
             </td>
         </tr>
 
-<!--        
+        
         <tr>
             <td class="style_white ">13</td>
             <td class="style_white ">
-                <strong>the full RAG pipeline, Evaluation</strong><br><br>
+                <strong>RAG Pipeline Evaluation</strong><br><br>
                 <strong>Lectures</strong><br>
+                Generating synthetic data for RAG testing: Take 10% of chunked data, generate Q/A pairs using LLM, use these to evaluate RAG system. This was proposed by the RAGAS framework (Retrieval‑Augmented Generation Assessment). The core idea is to leverage LLMs for automated, scalable RAG evaluation<br><br>
+            
                 <a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation/lesson/558u1/evaluating-retrieval">Evaluating Retrieval</a>A good overview of how to evaluate retrieval systems, Precision, Recall, MRR, <br><br>
-                <!-- see google drive for above slides -->
 
-<!--                Rerankers<br>
-                Full RAG pipeline<br>
-                Generating synthetic data for testing.<br>
-                Evaluation<br><br>
+                <!-- <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/RAG_Evaluation.pdf"></a> -->
+                <!-- see google drive for above slides -->
 
                 <strong>Readings</strong><br>
                 <a href="https://docs.ragas.io/en/stable/getstarted/rag_eval/">RAGAs generating synthetic data using an LLM</a><br>
@@ -684,7 +683,61 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
 
             </td>
             <td class="style_white ">
-                create evaluation notebook with examples
+                <a style="color: #00cc00" href="https://github.com/CNUClasses/471_code/blob/master/week13/RAG_Metrics_Practice_Notebook.ipynb">PRACTICE: RAG evaluatinn metrics </a>
+                <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week13/RAG_Metrics_Practice_Notebook.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a><br><br>
+
+
+
+
+                <table class="inner-table">
+                    <tr >
+                        <td >
+                            <a href="https://github.com/CNUClasses/471_code/blob/master/week13/Chroma_QA_Eval_Generator.ipynb">
+                            <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week13/generate_synthetic_dataset.png" alt="standard" style="max-height:100px;  margin:10px 0; vertical-align:middle;"></a>
+                        </td>
+                        <td >
+                            <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week13/Chroma_QA_Eval_Generator.ipynb">
+                            <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>
+                        </td>
+                        <td >
+                            Produces rag_eval_dataset.csv.  10% of chunked documents are used as input to an LLM to generate Question/Answer pairs (5 questions per eval chunk)pairs. These are then used to evaluate the RAG system from week 12.<br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            <a href="https://github.com/CNUClasses/471_code/blob/master/week13/RAG_Evaluate_with_rag_api.ipynb">Evaluating RAG system from week 12</a>
+                            
+                        </td>
+                        <td >
+                            <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week13/RAG_Evaluate_with_rag_api.ipynb">
+                            <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>
+                        </td>
+                        <td >
+                            Implements a compact RAG pipeline using only Hugging Face Models: it embeds a user query, retrieves candidates from a Chroma collection, reranks them, and generates a grounded answer with a LLM.
+                        </td>
+                    </tr>
+                </table>
+
+
+
+
+                <!-- Produces rag_eval_dataset.csv.  10% of chunked documents are used as input to an LLM to generate Question/Answer pairs (5 questions per eval chunk)pairs. These are then used to evaluate the RAG system from week 12.<br>
+                 <a href="https://github.com/CNUClasses/471_code/blob/master/week13/Chroma_QA_Eval_Generator.ipynb">Generating Test Data for evaluating RAG system from week 12</a>
+                 <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week13/Chroma_QA_Eval_Generator.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a><br><br>
+                 <br> 
+                 
+                
+                Uses api in /week13/rag_pipeline_api.py (rag pipeline from week 12 converted to an API for easy use in evaluation)<br>              
+                <a href="https://github.com/CNUClasses/471_code/blob/master/week13/RAG_Evaluate_with_rag_api.ipynb">Evaluating RAG system from week 12</a>
+                <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week13/RAG_Evaluate_with_rag_api.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a><br><br> -->
+
+
+                <!-- <a href="https://github.com/CNUClasses/471_code/blob/master/week13/RAG_Retriever_Eval_with_BM25.ipynb">Evaluating RAG Systems (Hugging Face)</a>
+                <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week13/RAG_Retriever_Eval_with_BM25.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a><br><br> -->
             </td>
         </tr> 
         <tr>
@@ -694,7 +747,7 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
             </td>
             <td class="style_white "></td>
         </tr>         
-        <tr>
+ <!--       <tr>
             <td class="style_white ">15</td>
             <td class="style_white ">
                 <strong>RAG improvement-Fine Tuning Hugging Face Embedding Models</strong><br><br>
