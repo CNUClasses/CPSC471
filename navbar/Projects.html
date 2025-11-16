@@ -77,7 +77,7 @@
                You will need a GPU for this project. Try Colab (free but cannot ssh into it), or one of the many available GPU providers (see above reccomendations, or try Digital Ocean, Lambda Labs etc..)
           </td> 
          </tr>
-     <tr>	
+         <tr>	
             <td class="style_white "><em>4</em></td> 
             <td class="style_white ">11/15/25 Midnight</td>
             <td class="style_white ">
@@ -85,7 +85,24 @@
                You will need a GPU for this project. Try Colab (free but cannot ssh into it), or one of the many available GPU providers (see above reccomendations, or try Lambda Labs, RunPod etc.., or search for <a href="https://www.google.com/search?q=easy+setup+cloud+based+GPU&oq=easy+setup+cloud+based+GPU">easy setup cloud based GPU</a>)<br>
                <mark>Please remove all repetitive code by creating utility functions or classes (this especially applies to the TrainingArguments and Trainer). Do not use any code that you do not understand<br>
             </td> 
-         </tr>    
+         </tr> 
+         <tr>	
+            <td class="style_white "><em>5</em></td> 
+            <td class="style_white ">demo by 12/15/25</td>
+            <td class="style_white ">
+               Create a full Rag system that uses a document store (Chroma, FAISS, etc..), a retriever, a reranker, and a LLM generator to answer questions based on a custom document collection of your choice. Please also evaluate your system using the metrics given in week 13. <br>
+               <strong>I have provided you with code for every step of this project. You may use any of it with the exception that you cannot reuse the models I used for the embedder, the reranker and the generator (choose your own).</strong><br>
+                <mark>You must demo this project to me in person (or google meet) before  Dec 15th. </mark><br><br>
+               Note: This is a good baseline for a capstone project if you are interested. You would need to extend it though, some suggestions:
+               <ul>
+                  <li> fine tuning embedder or reranker</li>
+                  <li> addding a parrallel key word search (BM-25) pipeline to make full hybrid search</li>                  
+                  <li> adding multi-modal document support (images, video, audio).  Especially tabular data, or detailed drawings or graphics</li>                  
+                  <li> adding LLM prompt tuning</li>
+               </ul>
+
+             </td> 
+         </tr>   
          
          
       </table>
