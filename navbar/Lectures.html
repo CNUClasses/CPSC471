@@ -436,7 +436,8 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
 
 
 
--                <!-- <strong>Model Memory Requirements</strong><br>
+-                <!-- IGNORE OR REWRITE THIS BEFORE USE
+                    <strong>Model Memory Requirements</strong><br>
                     1. Training memory is needed for model parameters, optimizer states, gradients, and activations. <u>Training always requires more memory than inference</u><br>
                     <ul>
                         <li>Total Memory = Model Memory + Optimizer Memory + Activation Memory + Gradient Memory</li>
@@ -469,6 +470,8 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 </ul>
                 Can combine, use Pipeline and Tensor Parallelism to create a cluster holding 1 copy of a model.  Create multiple copies of this cluster. Using DDP principles, Send different batches through each of these clustered models. Gather and average gradients, apply averaged gradients to all clustered models.<br><br>
 
+               
+                <a href="https://ragyfied.com/articles/what-is-transformer-architecture">A Technical Deep Dive into LLM Architecture, Performance, and Cost</a> <!-- Also downloaded in week11 folder --><br>
                 <a href="https://huggingface.co/docs/accelerate/en/usage_guides/model_size_estimator">Model Size Estimator</a><br>
                 <strong>Note</strong>: The above approach functions correctly but does not account for batch size or whether you are fine-tuning only the classification head or the entire model. A more practical method is to adjust the batch size
                 dynamically by monitoring GPU memory usage with <span class="gray-highlight">watch -n 1 nvidia-smi</span> in a terminal window.<br><br>
@@ -660,9 +663,10 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                 <!-- Generating synthetic data for RAG testing: Take 10% of chunked data, generate Q/A pairs using LLM, use these to evaluate RAG system. This was proposed by the RAGAS framework (Retrieval‑Augmented Generation Assessment). The core idea is to leverage LLMs for automated, scalable RAG evaluation<br><br>-->
             
                 <a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation/lesson/558u1/evaluating-retrieval">Evaluating Retrieval</a>A good overview of how to evaluate retrieval systems, Precision, Recall, MRR, <br><br> 
-
                 <!-- <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/RAG_Evaluation.pdf"></a> -->
                 <!-- see google drive for above slides -->
+
+                <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/finetuning_hardnegativemining.pdf">Bi-coder LLM (embedder) fine tuning pipeline</a>An overview of fine tuning a Hugging Face Embedding Model using MNRL and Triplet loss, plus an introduction to Hard Negative mining.<br><br>
 
                 <strong>Readings</strong><br>
                 <strong><a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation/lesson/77dr2c/prompt-engineering%3A-building-your-augmented-prompt">Prompt Engineering - building an augmented prompt for RAG systems</a></strong> <br>
@@ -747,6 +751,7 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                 <!-- Missing content:
                 Prompting with context, verses PEFT- what fine tuning does for you
                 RAG query expansion
+                graphRAG- https://ragyfied.com/articles/what-is-graphrag
                 Quantization
                 Agents
                 Custom Loss functions
