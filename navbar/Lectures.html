@@ -741,56 +741,97 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
             <td class="style_white ">15</td>
             <td class="style_white ">
                 <strong>RAG improvement-Fine Tuning Hugging Face Embedding Models</strong><br><br>
-                <strong>Lectures</strong><br>
-                Why/when- when domain is specialized (legal, medical)<br>
-                Risks? Catastrophic forgetting
-                loss function - MultipleNegativesRankingLoss(MNRL)<br>
+                <!-- <strong>Lectures</strong><br>
+                Why/when to do- when domain is specialized (legal, medical)<br>
+                Risks? Catastrophic forgetting!
+                loss function - MultipleNegativesRankingLoss(MNRL) and Triplet<br>
                 Mining Hard negatives to expand Dataset<br>
-                FineTune Embedding Model with HF Trainer<br>
+                FineTune Embedding Model with HF Trainer<br> -->
 
-                <!-- Missing content:
-                Prompting with context, verses PEFT- what fine tuning does for you
-                RAG query expansion
-                graphRAG- https://ragyfied.com/articles/what-is-graphrag
-                Quantization
-                Agents
-                Custom Loss functions
-                -->
-
-                <ul style="color: #cc0000">
-                <strong >Final Exam, 12/13/25 8am-10:30am Comprehensive, includes all content on course website from week 1 thru week 15 and all projects</strong>
+                 <ul>
+                    <li><strong>When to Fine-Tune Embedding Models:</strong> Fine-tune when your domain is specialized (e.g., legal, medical) and you have, or can generate, a labeled dataset. This helps the model better capture domain-specific semantics.</li>
+                    <li><strong>Risks of Fine-Tuning:</strong> Be aware of catastrophic forgetting, where the model loses its general knowledge while adapting to the new domain. To mitigate this, consider techniques like gradual unfreezing, using a smaller learning rate.</li>
+                    <li><strong>Loss Functions:</strong> Common loss functions for fine-tuning embedding models include Multiple Negatives Ranking Loss (MNRL) and Triplet Loss. These losses help the model learn to distinguish between similar and dissimilar pairs effectively.</li>
+                    <li><strong>Hard Negative Mining:</strong> This technique involves selecting challenging negative samples that are close to the positive samples in the embedding space. It helps improve the model's discriminative ability by forcing it to learn finer distinctions.</li>
+                    <li><strong>Using Hugging Face Trainer:</strong> The Hugging Face Trainer class provides a convenient way to fine-tune embedding models. It handles training loops, evaluation, and logging, making it easier to implement fine-tuning workflows.</li>
                 </ul>
+                <strong>Fine tuning usually yields substantial improvements, even in non specialized domains.  The following improvements were observed when fine tuning the Bi-Encoder in the CNU catalog RAG system</strong><br>
+                <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week13/improvements.png" alt="standard" style="max-height:150px;  margin:10px 0; vertical-align:middle;">
 
-                <strong>Readings</strong><br>
+                <br><br>
+ 
+                <strong>Missing content in this course:</strong>
+                <ul>                    
+                   
+                <li>Prompting with context, verses PEFT- what fine tuning does for you</li>
+                <li>RAG query expansion</li>
+                <li>graphRAG- https://ragyfied.com/articles/what-is-graphrag</li>
+                <li>Quantization</li>
+                <li>Agents</li>
+                <li>Custom Loss functions</li>
+               </ul>
+
+                <strong style="color: #cc0000">Final Exam, 12/13/25 8am-10:30am Comprehensive, includes all content on course website from week 1 thru week 15 and all projects</strong>
+
+
+                
             </td>
             <td class="style_white ">
                 <table class="inner-table">
                     <tr >
-                        <td rowspan="4">
-                            <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week13/fine_tune_biencoder_for_rag.png" alt="standard" style="max-height:600px;  margin:10px 0; vertical-align:middle;">
+                        <td >
+                            <a href="https://github.com/CNUClasses/471_code/blob/master/week13/RAG2_train_using_MNRL_loss.ipynb">
+                            <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week13/stage1.png" alt="standard" style="max-height:150px;  margin:10px 0; vertical-align:middle;"></a>
                         </td>
                         <td >
-                            <a href="https://github.com/CNUClasses/471_code/blob/master/week13/RAG2_train_using_MNRL_loss.ipynb">Finetuning Bi-Encoder with MNRL loss</a>
-
+                            <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week13/RAG2_train_using_MNRL_loss.ipynb">
+                            <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>
                         </td>
-                        
-                    </tr>
-                    <tr>                      
-                
                         <td >
-                            <a href="https://github.com/CNUClasses/471_code/blob/master/week13/RAG3_reembed_chroma_with_finetuned_model.ipynb">Re embedding chunks with fine tuned Bi Encoder</a>
+                            Finetuning Bi-Encoder with MNRL loss<br>
                         </td>
                     </tr>
-                    <tr>                      
+                    <tr >
                         <td >
-                            <a href="https://github.com/CNUClasses/471_code/blob/master/week13/RAG4_hard_negative_mining.ipynb">Hard Negative mining to generate Anchor, Positive, Negative triplets</a>
+                            <a href="https://github.com/CNUClasses/471_code/blob/master/week13/RAG3_reembed_chroma_with_finetuned_model.ipynb">
+                            <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week13/stage2.png" alt="standard" style="max-height:150px;  margin:10px 0; vertical-align:middle;"></a>
                         </td>
-                    </tr>
-                    <tr>                      
                         <td >
-                            <a href="https://github.com/CNUClasses/471_code/blob/master/week13/RAG5_train_using_triplet_loss.ipynb">Finetuning Bi-Encoder with Triplet Loss</a>
+                            <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week13/RAG3_reembed_chroma_with_finetuned_model.ipynb">
+                            <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>
+                        </td>
+                        <td >
+                            Re embedding chunks with fine tuned Bi Encoder<br>
                         </td>
                     </tr>
+                    <tr >
+                        <td >
+                            <a href="https://github.com/CNUClasses/471_code/blob/master/week13/RAG4_hard_negative_mining.ipynb">
+                            <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week13/stage3.png" alt="standard" style="max-height:150px;  margin:10px 0; vertical-align:middle;"></a>
+                        </td>
+                        <td >
+                            <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week13/RAG4_hard_negative_mining.ipynb">
+                            <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>
+                        </td>
+                        <td >
+                            
+                            Hard Negative mining to generate Anchor, Positive, Negative triplets<br>
+                        </td>
+                    </tr>
+                    <tr >
+                        <td >
+                            <a href="https://github.com/CNUClasses/471_code/blob/master/week13/RAG5_train_using_triplet_loss.ipynb">
+                            <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week13/stage4.png" alt="standard" style="max-height:150px;  margin:10px 0; vertical-align:middle;"></a>
+                        </td>
+                        <td >
+                            <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week13/RAG5_train_using_triplet_loss.ipynb">
+                            <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>
+                        </td>
+                        <td >
+                            Finetuning Bi-Encoder with Triplet Loss<br>
+                        </td>
+                    </tr>
+                   
                 </table>
 
             </td>
