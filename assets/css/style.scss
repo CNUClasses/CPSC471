@@ -2,4 +2,18 @@
 ---
 
 @import "{{ site.theme }}";
+
 .inner { position: relative; max-width: 80%; padding: 20px 10px; margin: 0 auto; }
+
+/* Let body grow as wide as its widest child (the table inside #main_content),
+   so all three .outer bands stretch to match. */
+html, body {
+  min-width: min-content;
+  margin: 0;
+}
+
+// ---
+// ---
+
+// @import "{{ site.theme }}";
+// .inner { position: relative; max-width: 80%; padding: 20px 10px; margin: 0 auto; }
