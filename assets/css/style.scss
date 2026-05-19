@@ -5,11 +5,26 @@
 
 .inner { position: relative; max-width: 80%; padding: 20px 10px; margin: 0 auto; }
 
-/* Let body grow as wide as its widest child (the table inside #main_content),
-   so all three .outer bands stretch to match. */
+/* Let body grow as wide as its widest child (the table) so all three bands stretch */
 html, body {
   min-width: min-content;
   margin: 0;
+}
+
+/* In the header and footer only (NOT main content — that holds the table),
+   pin the inner to the viewport so the title and footer text stay visible
+   no matter how far the user scrolls horizontally. */
+#header_wrap > .inner,
+#footer_wrap > .inner {
+  position: sticky;
+  left: 0;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  box-sizing: border-box;
 }
 
 // ---
