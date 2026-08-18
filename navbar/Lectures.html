@@ -40,7 +40,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                     
                     If you have a desktop GPU that has 24 GB of VRAM or more</strong> Then you can probably run most of the course notebooks locally. (If your GPU is in a laptop then you will not be able to do much given the amount of VRAM in laptop GPUs) <br>
                     <!-- You can use cloud providers such as lambda labs or digital ocean. -->
-                    If you would like to use cloud providers like Google Colab, Amazon SageMaker, or Microsoft Azure, then please consult <a href="https://pytorch.org/get-started/cloud-partners/">this page</a> for more information <strong>(these are not free!)</strong>. You should prefer this method since it gives you maximum flexibility in machine configuration and you will probably use it professionally.<br>
+                    If you would like to use cloud providers like <a href="https://lambda.ai/">Lambda Labs</a> or <a href="https://colab.research.google.com/">Google Colab</a>, <a href="https://aws.amazon.com/sagemaker/">Amazon SageMaker</a>, or <a href="https://azure.microsoft.com/en-us/services/machine-learning/">Microsoft Azure</a>, then please consult <a href="https://pytorch.org/get-started/cloud-partners/">this page</a> for more information <strong>(these are not free!)</strong>. You should prefer this method since it gives you maximum flexibility in machine configuration and you will probably use it professionally. Easiest is Google Colab, most useful is Amazon<br>
                        <!-- <mark>What about a Mac?</mark>  -->
                         <!-- <li> Textbooks: None required, but I find the following helpful
                         <ul>
@@ -119,7 +119,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
 
                 </td>
         </tr>
-        <tr>
+ <!--       <tr>
             <td class="style_white ">2</td>
             <td class="style_white ">
                <em><strong>Building a fully connected Neural Network using numpy to illustrate backpropagation</strong></em>
@@ -130,7 +130,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 <strong>Readings</strong><br>
                 <a href="https://scipy.github.io/old-wiki/pages/EricsBroadcastingDoc">Broadcasting in NumPy</a> A very important concept in PyTorch and NumPy<br>
             -->            
-            </td>
+<!--            </td>
             <td class="style_white ">
 
             <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week2/backprop_valueclass.ipynb">Flesh out numpy linear Neural Network</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week2/backprop_valueclass.ipynb">
@@ -151,11 +151,11 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
 <!-- <strong>Data Preparation and PyTorch Workflow</strong><br>
                 normalizing and why  -->
     
-                <strong>References</strong><br>
+<!--                <strong>References</strong><br>
                 <a href="https://docs.pytorch.org/tutorials/beginner/basics/quickstart_tutorial.html">PyTorch Quickstart Tutorial</a> A quick introduction to PyTorch<br>
                 <!--More extensive than above <a href="https://pytorch.org/tutorials/beginner/basics/intro.html">Pytorch Introduction</a><br> -->
     
-            </td>
+<!--            </td>
             <td class="style_white ">
                 <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week3/pytorch_intro_75min_lecture.ipynb">Pytorch_intro</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week3/pytorch_intro_75min_lecture.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Pytorch Introduction, Tensors, Autograd, Data loading and processing<br>
@@ -193,7 +193,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                  then MSE=(1/2)*( (.95-0) + (04-1) + (.01-0))**2-->
                  <!-- Visualize a model https://netron.app/-->
                
-                <strong>References</strong><br>
+<!--                <strong>References</strong><br>
                 <a href="https://www.digitalocean.com/community/tutorials/intro-to-optimization-momentum-rmsprop-adam">Intro to optimization in deep learning: Momentum, RMSProp and Adam</a><br>
 
                 <a href="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week4/gd.gif">Gradient Descent</a> Equal sized (w-grad*lr) steps in the direction of the steepest descent<br> <br>
@@ -249,7 +249,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 <!-- https://cs231n.github.io/convolutional-networks/-->
                 
                 <!-- <strong><a href="https://arxiv.org/abs/1712.09913">Visualizing the Loss Landscape of Neural Nets</a></strong> Less bumpy surfaces means its less likely that SGD gets stusk in a local minima<br> -->
-           </td>
+<!--           </td>
             <td class="style_white ">
                 <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week5/rgb_layers_local_png.ipynb">What is an image? </a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week5/rgb_layers_local_png.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Demonstrates an image consisting of Red Green and Blue (RGB) layers, with each layer being a matrix of numbers between 0 and 255.<br>
@@ -301,14 +301,14 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
 
                  <!-- <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb">Classify rice disease based on image</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> First fine tuning example with typical pytorch workflow using Kaggle dataset.  <br> -->
-               <a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/standard_ft.png" alt="standard" style="max-width:500px;  margin:10px 0; vertical-align:middle;"></a>
+<!--               <a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/standard_ft.png" alt="standard" style="max-width:500px;  margin:10px 0; vertical-align:middle;"></a>
                 <a target="_blank" href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a><br><br><br>
 
  
                 <!-- <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/multihead_model.png" alt="multiheadmodel" style="max-width:500px; display:block; margin:10px 0;"/> -->
                 <!-- <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multihead.ipynb">Classify rice disease based on image and metadata MULTIHEAD</a> </strong> -->
-                <a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multihead.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/multihead_model.png" alt="multiheadmodel" style="max-width:500px;  margin:10px 0; vertical-align:middle;"></a>
+<!--                <a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multihead.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/multihead_model.png" alt="multiheadmodel" style="max-width:500px;  margin:10px 0; vertical-align:middle;"></a>
                 <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multihead.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a><br><br><br>
 
@@ -316,7 +316,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 <!-- <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/multiinput_model.png" alt="multiinputmodel" style="max-width:500px; display:block; margin:10px 0;"/><br>
                <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multiinput.ipynb">Classify rice disease based on image and metadata MULTIINPUT</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multiinput.ipynb"> -->              
 
-               <a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multiinput.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/multiinput_model.png" alt="multiinputmodel" style="max-width:500px;  margin:10px 0;vertical-align:middle;"/></a>
+<!--               <a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multiinput.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/multiinput_model.png" alt="multiinputmodel" style="max-width:500px;  margin:10px 0;vertical-align:middle;"/></a>
                <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multiinput.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a><br>
 
@@ -330,11 +330,11 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
  
                 <strong>Lectures</strong><br>
                    Demo: YOLO11n using Ultralytics Android app  <!-- chromecast to overheads --><br>
-                   <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week7/object_detection_metrics_lecture.pdf">Object Detection and localization metrics</a></strong> Intersection over Union(IoU), Non Maximum Supression (NMS), Mean Average Precision (mAP)  <br><br>
+ <!--                  <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week7/object_detection_metrics_lecture.pdf">Object Detection and localization metrics</a></strong> Intersection over Union(IoU), Non Maximum Supression (NMS), Mean Average Precision (mAP)  <br><br>
 
                    <!-- AI powered data annotator? --><br><br>
     
-                <strong>Readings</strong><br>
+<!--                <strong>Readings</strong><br>
                 <strong><a href="https://www.ultralytics.com/blog/mean-average-precision-map-in-object-detection#:~:text=Let's%20get%20started!-,What%20is%20mean%20average%20precision%20(mAP)?,failed%20to%20detect%20any%20objects.">Object detection; mAP and IOU</a></strong><br>
                 - mAP-average precision when considering all classes that the detector can detect <br> 
                 - IOU Intersection Over Union- 0<=IOU<=1, how well a predicted bounding box lines up with the ground truth bounding box. IOU of .5 is often good enough.<br>
@@ -342,7 +342,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 
                  <strong><a href="https://farukalamai.substack.com/p/rf-detr-vs-yolov12-a-comprehensive">RF-DETR vs YOLOv12: A Comprehensive Comparison of Transformer and CNN-Based Object Detection</a> As of now, YOLO V12 is faster at inference, prefer for real time applications (live video, autonomous vehicles).  Otherwise RF-DETR<br>
                  <!-- the above link is saved as a pdf in the week 7 repo -->
-                  <strong><a href="https://arxiv.org/abs/2504.13099">RF-DETR Object Detection vs YOLOv12</a></strong>  RF-DETR is looking very strong.  Is YOLO dethroned?<br><br>
+<!--                  <strong><a href="https://arxiv.org/abs/2504.13099">RF-DETR Object Detection vs YOLOv12</a></strong>  RF-DETR is looking very strong.  Is YOLO dethroned?<br><br>
 
                 <strong><a href="https://www.youtube.com/watch?v=v6lt0cGSHBI">Non Maximum Suppression (NMS) explained in detail </a></strong><br><br>
         <ul style="color: #cc0000">
@@ -380,12 +380,12 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week8/BPE_example.pdf">Byte-pair encoding example</a></strong> Used by many tokenizers<br>
 
                 <!--Worked well on board, HAVE THEM WATCH BELOW VIDEO BEFORE CLASS! -->
-                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week8/TRansformers_intro_class_notes.pdf">The math of self-attention</a></strong> Notes for boardwork. Derives from the link below<br><br>
+<!--                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week8/TRansformers_intro_class_notes.pdf">The math of self-attention</a></strong> Notes for boardwork. Derives from the link below<br><br>
                 
                <strong><a href="https://learn.deeplearning.ai/courses/attention-in-transformers-concepts-and-code-in-pytorch/lesson/han2t/introduction">Attention in Transformers: Concepts and Code in PyTorch- Introduction</a> PLEASE WATCH!</strong><br>
                
                <!-- the following and lesson 9 are in CPSC471code, step thru and show what happens -->
-                <strong><a href="https://learn.deeplearning.ai/courses/attention-in-transformers-concepts-and-code-in-pytorch/lesson/kxluu/coding-self-attention-in-pytorch">Attention in Transformers: Concepts and Code in PyTorch- Coding Self Attention</a></strong><br><br>
+<!--                <strong><a href="https://learn.deeplearning.ai/courses/attention-in-transformers-concepts-and-code-in-pytorch/lesson/kxluu/coding-self-attention-in-pytorch">Attention in Transformers: Concepts and Code in PyTorch- Coding Self Attention</a></strong><br><br>
 
                 <!-- 
              
@@ -394,7 +394,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                  https://www.deep-ml.com/problems
                  -->
     
-                <strong>Readings</strong><br>
+<!--                <strong>Readings</strong><br>
                 <a href="https://arxiv.org/abs/1706.03762">Attention is all you need</a> The original transformer paper from 2017<br>
                 <a href="https://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a> Excellent visual explanation of transformers<br>
                 <a href="https://huggingface.co/learn/llm-course/en/chapter6/5">Byte Pair Encoding (BPE)</a> Explanation of BPE tokenization<br><br>
@@ -418,7 +418,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 <strong>Test </strong><br><br>
                 <strong>Lectures</strong><br>
                     <!--Rewrite this to be more extensive if class is technically proficient enough -->
-                    <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week9/transformers_intro.pdf">Transformer Introduction</a></strong><br>
+<!--                    <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week9/transformers_intro.pdf">Transformer Introduction</a></strong><br>
                
                 <strong>Readings</strong><br>
                 <a href="https://www.youtube.com/watch?v=bZQun8Y4L2A&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&index=9">State of GPT</a> A good overview of LLMs and GPT<br>
@@ -461,7 +461,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                     types of mpdels
                     Hugging Face
                     Example Usages -->
-                <strong>Readings</strong><br><br>
+<!--                <strong>Readings</strong><br><br>
                 <a href="https://www.youtube.com/watch?v=xkH8shGffRU">How Models Train at Scale on multiple GPUs</a> An excellent, high level overview    
                 <ul>
                     <li><strong>Distributed Data Parallelism (DDP):</strong> For multiple GPUs, one copy of the model per GPU. Send different batches through each GPU, gather and average gradients, and apply averaged gradients to all models. (Useful only if the entire model fits on each GPU.)</li>
@@ -472,7 +472,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
 
                
                 <a href="https://ragyfied.com/articles/what-is-transformer-architecture">A Technical Deep Dive into LLM Architecture, Performance, and Cost</a> <!-- Also downloaded in week11 folder --><br>
-                <a href="https://huggingface.co/docs/accelerate/en/usage_guides/model_size_estimator">Model Size Estimator</a><br>
+<!--                <a href="https://huggingface.co/docs/accelerate/en/usage_guides/model_size_estimator">Model Size Estimator</a><br>
                 <strong>Note</strong>: The above approach functions correctly but does not account for batch size or whether you are fine-tuning only the classification head or the entire model. A more practical method is to adjust the batch size
                 dynamically by monitoring GPU memory usage with <span class="gray-highlight">watch -n 1 nvidia-smi</span> in a terminal window.<br><br>
                 <a href="https://huggingface.co/learn/llm-course/en/chapter1/1">Introduction to LLMs by Hugging Face</a><br>
@@ -484,7 +484,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
            <!--<img src="https://cnuclasses.github.io/CPSC471/content/lectures/week10/KV_cache_explained.gif">  from https://medium.com/@joaolages/kv-caching-explained-276520203249>-->
 
             
-        </td>
+<!--        </td>
             <td class="style_white ">
                 <mark><strong>You need a GPU for these notebooks</strong></mark>
                 <p>
@@ -517,7 +517,7 @@ see where <strong>zero‑shot</strong> pipelines are powerful.<br>
 
     <!-- I used this prompt to create the following notebook<br>
    create a notebook for 4th year computer science students that demonstrates hugging faces pipeline. Specifically I want 3 things, a model that detects objects and their locations in a photo, another model that estimates the distance to these objects, and a third model which describes these objects and how far away they are and whether they are to the right, the left or in front. The front in an image is a verticle slice through the center of an image. Comment appropriately for someone just learning how to use these models. Emphasize that the notebook demonstrates pre trained zero shot models when applicable. Please put this in an annotated jupyter notebook for download.-->
-    <a href="https://github.com/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">Prototype for Vision Assistance:</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">
+<!--    <a href="https://github.com/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">Prototype for Vision Assistance:</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>   This application identifies nearby objects, estimates their distances, and describes their positions—left, right, or ahead of the user.
 Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<br>
 
@@ -544,7 +544,7 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                 
                 
                 <!-- <table class="inner-table"> -->
-                <table class="inner-table">   
+<!--                <table class="inner-table">   
                     <tr >
 
                         
@@ -598,7 +598,7 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                 Rerankers -explanation
                  -->
                 
-                <br>
+<!--                <br>
 
            
                 <strong>Readings</strong><br>
@@ -623,10 +623,10 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Compare the performance of a bi-encoder and a cross-encoder (reranker) on a passage retrieval task. Demonstrates why rerankers are more accurate but slower than bi-encoders.<br><br>
 
                 <!-- weaviate is hard to set up and hard to use verses chroma so we will use chroma, BUT weaviate will do hybrid search automatically, chromaDB will not<br><br> -->
-                 <strong>NOTE: The following 2 projects require pdfs in the notebooks ./pdf directory</strong><br><br>
+<!--                 <strong>NOTE: The following 2 projects require pdfs in the notebooks ./pdf directory</strong><br><br>
                  <!-- <a href="https://github.com/CNUClasses/471_code/blob/master/week12/Vector_Search_Toy_Plots_kNN_IVF_HNSW.ipynb">KNN, NSW and HNSW plots</a> -->
                 <!-- <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/vector_upsert_pipeline.png" alt="standard" style="max-height:100px;  margin:10px 0; vertical-align:middle;"><br> -->
-                <table class="inner-table">
+<!--                <table class="inner-table">
                     <tr >
                         <td >
                             <a href="https://github.com/CNUClasses/471_code/blob/master/week12/RAG_Lab1_langchain_PDF_Chunk_Embed_Chroma.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/vector_upsert_pipeline.png" alt="standard" style="max-height:100px;  margin:10px 0; vertical-align:middle;"></a>
@@ -663,11 +663,11 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                 <strong>Lectures</strong><br>
                 <!-- Generating synthetic data for RAG testing: Take 10% of chunked data, generate Q/A pairs using LLM, use these to evaluate RAG system. This was proposed by the RAGAS framework (Retrieval‑Augmented Generation Assessment). The core idea is to leverage LLMs for automated, scalable RAG evaluation<br><br>-->
             
-                <a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation/lesson/558u1/evaluating-retrieval">Evaluating Retrieval</a>A good overview of how to evaluate retrieval systems, Precision, Recall, MRR, <br><br> 
+<!--                <a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation/lesson/558u1/evaluating-retrieval">Evaluating Retrieval</a>A good overview of how to evaluate retrieval systems, Precision, Recall, MRR, <br><br> 
                 <!-- <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/RAG_Evaluation.pdf"></a> -->
                 <!-- see google drive for above slides -->
 
-                <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/finetuning_hardnegativemining.pdf">Bi-coder LLM (embedder) fine tuning pipeline</a>An overview of fine tuning a Hugging Face Embedding Model using MNRL and Triplet loss, plus an introduction to Hard Negative mining.<br><br>
+<!--                <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/finetuning_hardnegativemining.pdf">Bi-coder LLM (embedder) fine tuning pipeline</a>An overview of fine tuning a Hugging Face Embedding Model using MNRL and Triplet loss, plus an introduction to Hard Negative mining.<br><br>
 
                 <strong>Readings</strong><br>
                 <strong><a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation/lesson/77dr2c/prompt-engineering%3A-building-your-augmented-prompt">Prompt Engineering - building an augmented prompt for RAG systems</a></strong> <br>
@@ -749,7 +749,7 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                 Mining Hard negatives to expand Dataset<br>
                 FineTune Embedding Model with HF Trainer<br> -->
 
-                 <ul>
+<!--                 <ul>
                     <li><strong>When to Fine-Tune Embedding Models:</strong> Fine-tune when your domain is specialized (e.g., legal, medical) and you have, or can generate, a labeled dataset. This helps the model better capture domain-specific semantics.</li>
                     <li><strong>Risks of Fine-Tuning:</strong> Be aware of catastrophic forgetting, where the model loses its general knowledge while adapting to the new domain. To mitigate this, consider techniques like gradual unfreezing, using a smaller learning rate.</li>
                     <li><strong>Loss Functions:</strong> Common loss functions for fine-tuning embedding models include Multiple Negatives Ranking Loss (MNRL) and Triplet Loss. These losses help the model learn to distinguish between similar and dissimilar pairs effectively.</li>
@@ -769,7 +769,7 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                 <li>Cross Validation</li>
                 <li>Hyperparameter tuning</li>
                 <!-- <li>UMAP, TSNE, PCA</li> -->
-                <li>Prompting with context, verses PEFT- what fine tuning does for you</li>
+<!--                <li>Prompting with context, verses PEFT- what fine tuning does for you</li>
                 <li>RAG query expansion</li>
                 <li>graphRAG- https://ragyfied.com/articles/what-is-graphrag</li>
                 <li>Quantization</li>
