@@ -208,10 +208,10 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 <strong>Optimizer (responsible for updating model weights and biases):</strong><br>
                 For both use AdamW, with the defaults first with weight decay=0.01 (AdamW adds weight decay to Adam to help regularize the model)<br><br>
 
-                <strong>Hyperparameters:</strong><br>
+                <strong>Hyperparameters: used to train or finetune a model.  Here are some common ones for computer vision (with Convolutional Neural Networks):</strong><br>
                 Batch size: 32, 64, 128, 256 (try these values, smaller batch sizes give better results but take longer to train, larger batch sizes may not fit on GPU)<br>
                 Learning Rate (LR): A good default LR is 0.01 -> 0.001.  (although we will dump this later when we get to LR annealers)<br>
-                    If you increate batch size when using Adam then multiply LR by square root of increate (ie if go from BS=64 to 128, then multiply LR by square root of 2 )<br>
+                    If you increate batch size when using Adam then multiply LR by square root of the increase (ie if go from BS=64 to 128, then multiply LR by square root of 2 )<br>
                 Amount of Data: Try to have at least 1000 samples that are <u>representative of the data you would like to predict</u><br><br>
                 </mark>
 
@@ -227,13 +227,13 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
 
             </td>
 
-<!--        </tr>
+        </tr>
             <td class="style_white "><em><strong>5</strong></em>
             
 
             </td>
             <td class="style_white ">
-                <strong>Image Classification using Convolutional Neural Networks (CNN)</strong><br><br>
+                <strong>Image Classification using Convolutional Neural Networks (CNN)<br><MARK>This is a different kind of neural network. Previously we used fully connected layers, now we add convolutional layers FOLLOWED by fully connected layers.</strong><br><br>
                 <strong>Lectures<br>
                         <a href="https://cnuclasses.github.io/DATA301/content/lectures/week10/10_Precision_Recall_F1_Confusion_matrix.pdf">Precision/Recall, F1 Score, Confusion Matrix</a></strong>
                 Why accuracy is a bad metric for unbalanced datasets (spoiler: model can just predict majority class always). Other measures that do a better job of evaluating model performence <br><br>
@@ -250,8 +250,8 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
              <strong><a href="https://cnuclasses.github.io/DATA301/content/lectures/week10/thepowerofbatchnorm.jpeg">The power of Batch Normalization</a></strong>Stabilizes gradients,speeds up learning, improves generalization.<br>
                 <!-- https://cs231n.github.io/convolutional-networks/-->
                 
-                <!-- <strong><a href="https://arxiv.org/abs/1712.09913">Visualizing the Loss Landscape of Neural Nets</a></strong> Less bumpy surfaces means its less likely that SGD gets stusk in a local minima<br> -->
-<!--           </td>
+                <strong><a href="https://arxiv.org/abs/1712.09913">Visualizing the Loss Landscape of Neural Nets</a></strong> Less bumpy surfaces means its less likely that SGD gets stusk in a local minima<br>
+           </td>
             <td class="style_white ">
                 <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week5/rgb_layers_local_png.ipynb">What is an image? </a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week5/rgb_layers_local_png.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Demonstrates an image consisting of Red Green and Blue (RGB) layers, with each layer being a matrix of numbers between 0 and 255.<br>
@@ -264,7 +264,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
             </td>
            
         </tr>
-        <tr>
+<!--        <tr>
             <td class="style_white ">6,7</td>
             <td class="style_white ">
                 <strong>Fine tuning pre trained models for Image Classification using Pytorch Image Models (timm)</strong><br><br>
