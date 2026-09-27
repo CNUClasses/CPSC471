@@ -265,7 +265,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
             </td>
            
         </tr>
-<!--        <tr>
+        <tr>
             <td class="style_white ">6,7</td>
             <td class="style_white ">
                 <strong>Fine tuning pre trained models for Image Classification using Pytorch Image Models (timm)</strong><br><br>
@@ -296,22 +296,36 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
 				<a href="https://www.robots.ox.ac.uk/~vgg/data/pets/"> Oxford IIT-Pet</a> and then <a href="https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/data">Kaggle planet (space images)</a>.<br>
 
                  <strong><a href="https://github.com/huggingface/pytorch-image-models?tab=readme-ov-file">pytorch-image-models (timm)</a></strong>A collection of state-of-the-art (SOTA) computer vision models, pretrained weights, and tools for building, training, and validating deep learning models<br><br>
-            </td>
+
+        <ul style="color: #cc0000">
+            <li><strong >Test 1, 10/21/26 includes all content on course website through week 7 and projects 1, 2 and 3</strong></li>
+            <li>You may bring 1 sheet of paper with notes on both sides if you like. No other resources are allowed.</li>
+            <li>Understand chain rule and backprop and how it was implemented in class. If given a simple network, be able to apply backprop by hand to find gradients.</li>
+            <li>All broadcasting examples.</li>
+            <li>Understand softmax and cross entropy loss.</li>
+            <li>Precision, recall, F1 score (all practice problems)</li>
+            <li>CNNs - be able to calculate output size given input size, filter size, stride, padding.</li>
+            <li>Be able to calculate trainable parameters in a conv layer and in a fully connected layer.</li>
+            <li>timm - know how to choose a model for a given application.</li>
+            <li>timm - how to customize a model for your dataset (see images on main page, week 6)</li>
+            <li>Object detection - know what IoU, NMS and mAP are.</li>
+        </ul>
+                </td>
             <td class="style_white ">
 
                 <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week6/paddy_explore_dataset.ipynb">Explore dataset to see if metadata is predictive</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week6/paddy_explore_dataset.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>You can ballpark usability of data by checking to see if its correlated with the target.<br><br><br>
 
-                 <!-- <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb">Classify rice disease based on image</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb">
+                 <!-- <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb">Classify rice disease based on image</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb"> 
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> First fine tuning example with typical pytorch workflow using Kaggle dataset.  <br> -->
-<!--               <a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/standard_ft.png" alt="standard" style="max-width:500px;  margin:10px 0; vertical-align:middle;"></a>
+               <a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/standard_ft.png" alt="standard" style="max-width:500px;  margin:10px 0; vertical-align:middle;"></a>
                 <a target="_blank" href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a><br><br><br>
 
  
                 <!-- <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/multihead_model.png" alt="multiheadmodel" style="max-width:500px; display:block; margin:10px 0;"/> -->
                 <!-- <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multihead.ipynb">Classify rice disease based on image and metadata MULTIHEAD</a> </strong> -->
-<!--                <a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multihead.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/multihead_model.png" alt="multiheadmodel" style="max-width:500px;  margin:10px 0; vertical-align:middle;"></a>
+                <a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multihead.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/multihead_model.png" alt="multiheadmodel" style="max-width:500px;  margin:10px 0; vertical-align:middle;"></a>
                 <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multihead.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a><br><br><br>
 
@@ -319,15 +333,15 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 <!-- <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/multiinput_model.png" alt="multiinputmodel" style="max-width:500px; display:block; margin:10px 0;"/><br>
                <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multiinput.ipynb">Classify rice disease based on image and metadata MULTIINPUT</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multiinput.ipynb"> -->              
 
-<!--               <a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multiinput.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/multiinput_model.png" alt="multiinputmodel" style="max-width:500px;  margin:10px 0;vertical-align:middle;"/></a>
+               <a href="https://github.com/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multiinput.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week6/multiinput_model.png" alt="multiinputmodel" style="max-width:500px;  margin:10px 0;vertical-align:middle;"/></a>
                <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week6/kaggle_paddy_timm_multiinput.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a><br>
 
 
             </td>
         </tr>
-        <tr>
-            <td class="style_white ">7</td>
+<!--        <tr>
+            <td class="style_white ">8</td>
             <td class="style_white ">
                 <strong>Object Detection - YOLO- a model for identifying, and localizing objects. </strong><br><br>
  
@@ -348,19 +362,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
 <!--                  <strong><a href="https://arxiv.org/abs/2504.13099">RF-DETR Object Detection vs YOLOv12</a></strong>  RF-DETR is looking very strong.  Is YOLO dethroned?<br><br>
 
                 <strong><a href="https://www.youtube.com/watch?v=v6lt0cGSHBI">Non Maximum Suppression (NMS) explained in detail </a></strong><br><br>
-        <ul style="color: #cc0000">
-            <li><strong >Test 1, 10/20/26 includes all content on course website through week 7 and projects 1, 2 and 3</strong></li>
-            <li>You may bring 1 sheet of paper with notes on both sides if you like. No other resources are allowed.</li>
-            <li>Understand chain rule and backprop and how it was implemented in class. If given a simple network, be able to apply backprop by hand to find gradients.</li>
-            <li>All broadcasting examples.</li>
-            <li>Understand softmax and cross entropy loss.</li>
-            <li>Precision, recall, F1 score (all practice problems)</li>
-            <li>CNNs - be able to calculate output size given input size, filter size, stride, padding.</li>
-            <li>Be able to calculate trainable parameters in a conv layer and in a fully connected layer.</li>
-            <li>timm - know how to choose a model for a given application.</li>
-            <li>timm - how to customize a model for your dataset (see images on main page, week 6)</li>
-            <li>Object detection - know what IoU, NMS and mAP are.</li>
-        </ul>
+        
             </td>
             <td class="style_white ">
                 <mark>A company hires you to develop a computer vision system that analyzes CCTV footage from construction sites to automatically identify workers who are not wearing required safety equipment. How do you do it?</mark>
