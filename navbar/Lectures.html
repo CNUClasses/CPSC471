@@ -381,7 +381,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
             </td>
         </tr>
        <tr>
-            <td class="style_white ">9</td>
+            <td class="style_white ">9,10</td>
             <td class="style_white ">
                 <strong>Transformer Introduction:</strong><br><br>
                 <strong>Lectures</strong><br>
@@ -401,6 +401,9 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                  https://learn.deeplearning.ai/courses/embedding-models-from-architecture-to-implementation/lesson/obyoa/contextualized-token-embeddings 
                  https://www.deep-ml.com/problems
                  -->
+                                    <!--Do not use- Rewrite this to be more extensive if class is technically proficient enough -->
+                                    <!--<strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week9/transformers_intro.pdf">Transformer Introduction</a></strong><br>-->
+
     
                 <strong>Readings</strong><br>
                 <a href="https://arxiv.org/abs/1706.03762">Attention is all you need</a> The original transformer paper from 2017<br>
@@ -408,7 +411,10 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 <a href="https://huggingface.co/learn/llm-course/en/chapter6/5">Byte Pair Encoding (BPE)</a> Explanation of BPE tokenization<br><br>
                <a href="https://www.youtube.com/watch?v=kCc8FmEb1nY">Let's build GPT: from scratch, in code, spelled out.</a> Down in the weeds explanation from an expert.<br><br>
 
+               <a href="https://www.youtube.com/watch?v=bZQun8Y4L2A&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&index=9">State of GPT</a> A good overview of LLMs and GPT<br>
+                <a href="https://learn.deeplearning.ai/courses/how-transformer-llms-work/lesson/nfshb/introduction">How transformer LLMs work</a> <br>
                 <strong>Tools</strong><br>
+
                 <a href="https://tiktokenizer.vercel.app/">Tiktokenizer</a> an online visualization tool that shows how text is broken down into "tokens" by large language models (LLMs) like those from OpenAI. It is a frontend for OpenAI's fast, open-source tokenizer library, tiktoken.<br>
             </td>
             <td class="style_white ">
@@ -420,23 +426,8 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
             </td>
         </tr>
 
-<!--        <tr>
-            <td class="style_white ">9</td>
-            <td class="style_white ">
-                <strong>Test </strong><br><br>
-                <strong>Lectures</strong><br>
-                    <!--Rewrite this to be more extensive if class is technically proficient enough -->
-<!--                    <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week9/transformers_intro.pdf">Transformer Introduction</a></strong><br>
-               
-                <strong>Readings</strong><br>
-                <a href="https://www.youtube.com/watch?v=bZQun8Y4L2A&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ&index=9">State of GPT</a> A good overview of LLMs and GPT<br>
-
-                <a href="https://learn.deeplearning.ai/courses/how-transformer-llms-work/lesson/nfshb/introduction">How transformer LLMs work</a> <br>
-            </td>
-            <td class="style_white "></td>
-        </tr>
         <tr>
-            <td class="style_white ">10</td>
+            <td class="style_white ">10,11</td>
             <td class="style_white ">
                 <strong>LLM introduction, Hugging Face, LLM sample applications</strong><br><br>
                 <strong>Lectures</strong><br>
@@ -469,7 +460,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                     types of mpdels
                     Hugging Face
                     Example Usages -->
-<!--                <strong>Readings</strong><br><br>
+                <strong>Readings</strong><br><br>
                 <a href="https://www.youtube.com/watch?v=xkH8shGffRU">How Models Train at Scale on multiple GPUs</a> An excellent, high level overview    
                 <ul>
                     <li><strong>Distributed Data Parallelism (DDP):</strong> For multiple GPUs, one copy of the model per GPU. Send different batches through each GPU, gather and average gradients, and apply averaged gradients to all models. (Useful only if the entire model fits on each GPU.)</li>
@@ -480,7 +471,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
 
                
                 <a href="https://ragyfied.com/articles/what-is-transformer-architecture">A Technical Deep Dive into LLM Architecture, Performance, and Cost</a> <!-- Also downloaded in week11 folder --><br>
-<!--                <a href="https://huggingface.co/docs/accelerate/en/usage_guides/model_size_estimator">Model Size Estimator</a><br>
+                <a href="https://huggingface.co/docs/accelerate/en/usage_guides/model_size_estimator">Model Size Estimator</a><br>
                 <strong>Note</strong>: The above approach functions correctly but does not account for batch size or whether you are fine-tuning only the classification head or the entire model. A more practical method is to adjust the batch size
                 dynamically by monitoring GPU memory usage with <span class="gray-highlight">watch -n 1 nvidia-smi</span> in a terminal window.<br><br>
                 <a href="https://huggingface.co/learn/llm-course/en/chapter1/1">Introduction to LLMs by Hugging Face</a><br>
@@ -492,7 +483,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
            <!--<img src="https://cnuclasses.github.io/CPSC471/content/lectures/week10/KV_cache_explained.gif">  from https://medium.com/@joaolages/kv-caching-explained-276520203249>-->
 
             
-<!--        </td>
+        </td>
             <td class="style_white ">
                 <mark><strong>You need a GPU for these notebooks</strong></mark>
                 <p>
@@ -525,7 +516,7 @@ see where <strong>zero‑shot</strong> pipelines are powerful.<br>
 
     <!-- I used this prompt to create the following notebook<br>
    create a notebook for 4th year computer science students that demonstrates hugging faces pipeline. Specifically I want 3 things, a model that detects objects and their locations in a photo, another model that estimates the distance to these objects, and a third model which describes these objects and how far away they are and whether they are to the right, the left or in front. The front in an image is a verticle slice through the center of an image. Comment appropriately for someone just learning how to use these models. Emphasize that the notebook demonstrates pre trained zero shot models when applicable. Please put this in an annotated jupyter notebook for download.-->
-<!--    <a href="https://github.com/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">Prototype for Vision Assistance:</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">
+    <a href="https://github.com/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">Prototype for Vision Assistance:</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>   This application identifies nearby objects, estimates their distances, and describes their positions—left, right, or ahead of the user.
 Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<br>
 
@@ -552,7 +543,7 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                 
                 
                 <!-- <table class="inner-table"> -->
-<!--                <table class="inner-table">   
+                <table class="inner-table">   
                     <tr >
 
                         
@@ -591,7 +582,7 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
 
             </td>
         </tr>
-        <tr>
+ <!--       <tr>
             <td class="style_white ">12</td>
             <td class="style_white ">
                 <strong> Vector Search Algorithms, Chunking Data, Vector Databases (Chroma), Rerankers, Full RAG pipeline  </strong><br><br>
