@@ -383,7 +383,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
        <tr>
             <td class="style_white ">9,10</td>
             <td class="style_white ">
-                <strong>Transformer Introduction:</strong><br><br>
+                <strong>Transformer Introduction, Hugging Face, LLM sample applications</strong><br><br>
                 <strong>Lectures</strong><br>
                 <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week8/BPE_example.pdf">Byte-pair encoding example</a></strong> Used by many tokenizers<br>
 
@@ -427,70 +427,6 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Insight into embeddings. GloVe does not have contextual information, BERT does. For example, given the sentences "The bat flew" and "The bat swung", 
                 the word 'bat' means an animal in the first and a baseball bat in the second. Glove will not detect this and think they are identical, BERT will understand the context. This is because BERT embeddings were trained using attention.<br>
 
-                <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week9/Transformers_Encoder_Lab.ipynb">Inside the Encoder: Contextual Embeddings and Classifier Heads </a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week9/Transformers_Encoder_Lab.ipynb">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> This lab uses Hugging Face’s BERT to show how contextual embeddings capture word meaning, then applies that same encoder to sentiment classification, fill-in-the-blank, named entity recognition, question answering, and search.<br>
-
-
-            </td>
-        </tr>
-
-        <tr>
-            <td class="style_white ">10,11</td>
-            <td class="style_white ">
-                <strong>LLM introduction, Hugging Face, LLM sample applications</strong><br><br>
-                <strong>Lectures</strong><br>
-                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week10/GPT-Assistant-Training-Pipeline.pdf">GPT Training Pipeline</a></strong> An overview of what it takes to train a frontier LLM </a><br><br>
-
-
-
-                <!-- IGNORE OR REWRITE THIS BEFORE USE-->
-                    <strong>Model Memory Requirements</strong><br>
-                    1. Training memory is needed for model parameters, optimizer states, gradients, and activations. <u>Training always requires more memory than inference</u><br>
-                    <ul>
-                        <li>Total Memory = Model Memory + Optimizer Memory + Activation Memory + Gradient Memory</li>
-                        <li>Example: 70B parameter model (Llama 2 70B) using half-precision (2 bytes/parameter) and AdamW optimizer (optimizer states ≈ 4× model size)</li>
-                        <li>
-                            Breakdown:
-                            <ul>
-                                <li>Model Memory = 70B * 2 bytes = 140 GB</li>
-                                <li>Optimizer Memory = 4 * Model Memory = 560 GB</li>
-                                <li>Activation Memory (assume ~6 activations per hidden element per layer) ≈ 6 * sequence_length * batch_size * hidden_size * num_layers * precision. Example: batch_size=8, sequence_length=1024, hidden_size=8192 → ~64 GB</li>
-                                <li>Gradient Memory = Same as Model Memory = 140 GB</li>
-                            </ul>
-                        </li>
-                        <li>Total Memory ≈ 140 GB + 560 GB + 64 GB + 140 GB = ~904 GB</li>
-                    </ul><br>
-
-                    2. Inference Memory is needed for model parameters and activations. Activations are generally lower than during training since gradients are not computed.<br>
-
-                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week10/Estimating-LLM-Inference-Memory-Requirements.pdf">Estimating LLM Inference Memory Requirements</a></strong> How much memory do you need at inference time based on model size, sequence length, batch size, and kv-caching.<br><br>
-           
-                <strong>Readings</strong><br><br>
-                <a href="https://www.youtube.com/watch?v=xkH8shGffRU">How Models Train at Scale on multiple GPUs</a> An excellent, high level overview    
-                <ul>
-                    <li><strong>Distributed Data Parallelism (DDP):</strong> For multiple GPUs, one copy of the model per GPU. Send different batches through each GPU, gather and average gradients, and apply averaged gradients to all models. (Useful only if the entire model fits on each GPU.)</li>
-                    <li><strong>Pipeline Parallelism:</strong> Distributes model layers across GPUs so different GPUs process different layer chunks for the same batch. Most GPUs are active simultaneously, but this can incur high communication overhead between GPUs.</li>
-                    <li><strong>Tensor Parallelism:</strong> Splits individual tensor operations (e.g., large matrix multiplications) across multiple GPUs.</li>
-                </ul>
-                Can combine, use Pipeline and Tensor Parallelism to create a cluster holding 1 copy of a model.  Create multiple copies of this cluster. Using DDP principles, Send different batches through each of these clustered models. Gather and average gradients, apply averaged gradients to all clustered models.<br><br>
-
-               
-                <a href="https://ragyfied.com/articles/what-is-transformer-architecture">A Technical Deep Dive into LLM Architecture, Performance, and Cost</a> <!-- Also downloaded in week11 folder --><br>
-                <a href="https://huggingface.co/docs/accelerate/en/usage_guides/model_size_estimator">Model Size Estimator</a><br>
-                <strong>Note</strong>: The above approach functions correctly but does not account for batch size or whether you are fine-tuning only the classification head or the entire model. A more practical method is to adjust the batch size
-                dynamically by monitoring GPU memory usage with <span class="gray-highlight">watch -n 1 nvidia-smi</span> in a terminal window.<br><br>
-                <a href="https://huggingface.co/learn/llm-course/en/chapter1/1">Introduction to LLMs by Hugging Face</a><br>
-
-            
-              <!-- <a href="https://tensorwave.com/blog/estimating-llm-inference-memory-requirements">Estimating LLM Memory</a>Estimate memory inference requirements for training of large language models (LLMs) based on model size, sequence_length, batch_size, and kv-caching.<br><br>
-              Note: KV caching occurs during multiple token generation steps and <mark>only happens in the decoder</mark> (i.e., in decoder-only models like GPT, or in the decoder part of encoder-decoder models). Encoder only models like BERT are not generative and therefore do not have KV caching.<br>
-           <a href="https://medium.com/@joaolages/kv-caching-explained-276520203249">KV Caching Explained</a>Look at third animation, notice that it reuses previous tokens instead of recalculating them.<br> -->
-           <!--<img src="https://cnuclasses.github.io/CPSC471/content/lectures/week10/KV_cache_explained.gif">  from https://medium.com/@joaolages/kv-caching-explained-276520203249>-->
-
-            
-        </td>
-            <td class="style_white ">
-                <mark><strong>You need a GPU for these notebooks</strong></mark>
                 <p>
                 <strong>&#129303; Hugging Face</strong> is an <strong>open-source ecosystem and platform</strong> that makes modern machine learning—especially
                 <strong>transformer-based deep-learning models</strong>—accessible, reproducible, and shareable.
@@ -511,7 +447,106 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 </ul>
 
                 <p>Hugging face is not limited to NLP tasks; it also supports <strong>computer vision</strong>, <strong>audio processing</strong>, and <strong>multimodal tasks</strong>.</p>
-                <p>We will concentrate on NLP tasks in this course.  For other tasks, please refer to the Hugging Face documentation and the tutorials to the left.</p><br>
+                <p>We will concentrate on NLP tasks in this course.  For other tasks, please refer to the Hugging Face documentation and the tutorials.</p><br>
+                <mark><strong>You need a GPU for this notebook</strong></mark><br>
+                <table class="inner-table"> 
+                    <tr >
+
+                        
+                        <td rowspan="2" vertical-align: middle; >
+                            <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week11/encoder_ft.png" alt="standard" style="max-height:200px;  margin:10px 0; vertical-align:middle;"></td>
+                        </td>
+                        <td >                           
+          
+                <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week9/Transformers_Encoder_Lab.ipynb">Inside the Encoder: Contextual Embeddings and Classifier Heads </a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week9/Transformers_Encoder_Lab.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> This lab uses Hugging Face’s BERT to show how contextual embeddings capture word meaning, then applies that same encoder to sentiment classification, fill-in-the-blank, named entity recognition, question answering, and search.<br>
+                        </td>
+                        </tr>
+                        </table>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td class="style_white ">11</td>
+            <td class="style_white ">
+                <strong>GPT training, Hugging Face Pipelines, Prompting, Learning Rate Schedulers</strong><br><br>
+
+                <ul style="color: #cc0000">
+                <strong >Test 2, 11/23/26 includes all content on course website from week 7 thru week 13 and project 4</strong>
+                <li>You may bring 1 sheet of paper with notes on both sides if you like. No other resources are allowed.</li> 
+                <li>Embeddings, Glove, BERT, Byte-pair, why BERT embeddings are better than Glove</li>
+                <li>dot product, cosine similarity</li>
+                <li>self attention, the matrix math</li>
+                <li>GPT training pipeline (DDP verses Pipeline Parallism verses Tensor Parallelism</li>
+                <li>Learning rate schedulers</li>
+                <li>Prompting (chat roles, constructing LLM prompts)</li>
+                <li>What RAG is and how it works.</li>
+                <li>the difference between bi-encoders and cross-encoders (rerankers).</li>
+                <li>How vector databases work and how to use them.</li>
+                <li>Vector search algorithms</li>
+                <li>RAG evaluation metrics </li>
+                
+                </ul>
+
+                <strong>Lectures</strong><br>
+                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week10/GPT-Assistant-Training-Pipeline.pdf">GPT Training Pipeline</a></strong> An overview of what it takes to train a frontier LLM </a><br><br>
+                    <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Learning-Rate-Schedulers.pdf">Learning Rate Schedulers: Cosine Annealing & One Cycle</a></strong> Used heavily with LLMs (and with most other DL models). <mark>With these you do not do early stopping.</mark><br>
+                    <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Prompting-Large-Language-Models-with-Hugging-Face.pdf">Introduction to LLM Prompting with the Hugging Face API</a></strong> An introduction to prompting large language models (LLMs) using the Hugging Face Inference API. <br><br>
+ 
+                
+                <!-- IGNORE OR REWRITE THIS BEFORE USE- skip for 2026    
+                     Need KV cache for a more detailed look at model memory requirements
+                    <strong>Model Memory Requirements</strong><br>
+                    1. Training memory is needed for model parameters, optimizer states, gradients, and activations. <u>Training always requires more memory than inference</u><br>
+                    <ul>
+                        <li>Total Memory = Model Memory + Optimizer Memory + Activation Memory + Gradient Memory</li>
+                        <li>Example: 70B parameter model (Llama 2 70B) using half-precision (2 bytes/parameter) and AdamW optimizer (optimizer states ≈ 4× model size)</li>
+                        <li>
+                            Breakdown:
+                            <ul>
+                                <li>Model Memory = 70B * 2 bytes = 140 GB</li>
+                                <li>Optimizer Memory = 4 * Model Memory = 560 GB</li>
+                                <li>Activation Memory (assume ~6 activations per hidden element per layer) ≈ 6 * sequence_length * batch_size * hidden_size * num_layers * precision. Example: batch_size=8, sequence_length=1024, hidden_size=8192 → ~64 GB</li>
+                                <li>Gradient Memory = Same as Model Memory = 140 GB</li>
+                            </ul>
+                        </li>
+                        <li>Total Memory ≈ 140 GB + 560 GB + 64 GB + 140 GB = ~904 GB</li>
+                    </ul><br>
+
+                    2. Inference Memory is needed for model parameters and activations. Activations are generally lower than during training since gradients are not computed.<br>
+
+                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week10/Estimating-LLM-Inference-Memory-Requirements.pdf">Estimating LLM Inference Memory Requirements</a></strong> How much memory do you need at inference time based on model size, sequence length, batch size, and kv-caching.<br><br>
+                -->
+                <strong>Readings</strong><br><br>
+                <a href="https://www.youtube.com/watch?v=xkH8shGffRU">How Models Train at Scale on multiple GPUs</a> An excellent, high level overview    
+                <ul>
+                    <li><strong>Distributed Data Parallelism (DDP):</strong> For multiple GPUs, one copy of the model per GPU. Send different batches through each GPU, gather and average gradients, and apply averaged gradients to all models. (Useful only if the entire model fits on each GPU.)</li>
+                    <li><strong>Pipeline Parallelism:</strong> Distributes model layers across GPUs so different GPUs process different layer chunks for the same batch. Most GPUs are active simultaneously, but this can incur high communication overhead between GPUs.</li>
+                    <li><strong>Tensor Parallelism:</strong> Splits individual tensor operations (e.g., large matrix multiplications) across multiple GPUs.</li>
+                </ul>
+                Can combine, use Pipeline and Tensor Parallelism to create a cluster holding 1 copy of a model.  Create multiple copies of this cluster. Using DDP principles, Send different batches through each of these clustered models. Gather and average gradients, apply averaged gradients to all clustered models.<br><br>
+
+               
+                <a href="https://ragyfied.com/articles/what-is-transformer-architecture">A Technical Deep Dive into LLM Architecture, Performance, and Cost</a> <!-- Also downloaded in week11 folder --><br>
+                 <a href="https://huggingface.co/learn/llm-course/en/chapter1/1">Introduction to LLMs by Hugging Face</a><br>
+                <strong><a href="https://huggingface.co/docs/transformers/en/tasks/prompting">Hugging Face - Prompt Engineering</a><br>
+ 
+
+            
+                <!-- NOT FOR 2026 <a href="https://huggingface.co/docs/accelerate/en/usage_guides/model_size_estimator">Model Size Estimator</a><br>
+                <strong>Note</strong>: The above approach functions correctly but does not account for batch size or whether you are fine-tuning only the classification head or the entire model. A more practical method is to adjust the batch size
+                dynamically by monitoring GPU memory usage with <span class="gray-highlight">watch -n 1 nvidia-smi</span> in a terminal window.<br><br> -->
+            
+              <!-- <a href="https://tensorwave.com/blog/estimating-llm-inference-memory-requirements">Estimating LLM Memory</a>Estimate memory inference requirements for training of large language models (LLMs) based on model size, sequence_length, batch_size, and kv-caching.<br><br>
+              Note: KV caching occurs during multiple token generation steps and <mark>only happens in the decoder</mark> (i.e., in decoder-only models like GPT, or in the decoder part of encoder-decoder models). Encoder only models like BERT are not generative and therefore do not have KV caching.<br>
+           <a href="https://medium.com/@joaolages/kv-caching-explained-276520203249">KV Caching Explained</a>Look at third animation, notice that it reuses previous tokens instead of recalculating them.<br> -->
+           <!--<img src="https://cnuclasses.github.io/CPSC471/content/lectures/week10/KV_cache_explained.gif">  from https://medium.com/@joaolages/kv-caching-explained-276520203249>-->
+
+            
+        </td>
+            <td class="style_white ">
+                
 
         
                 The most high level API in Hugging Face is the <strong>pipeline</strong> API.  This allows you to quickly use pretrained models for common tasks without having to understand the details of how the models work.<br><br>
@@ -523,23 +558,26 @@ see where <strong>zero‑shot</strong> pipelines are powerful.<br>
    create a notebook for 4th year computer science students that demonstrates hugging faces pipeline. Specifically I want 3 things, a model that detects objects and their locations in a photo, another model that estimates the distance to these objects, and a third model which describes these objects and how far away they are and whether they are to the right, the left or in front. The front in an image is a verticle slice through the center of an image. Comment appropriately for someone just learning how to use these models. Emphasize that the notebook demonstrates pre trained zero shot models when applicable. Please put this in an annotated jupyter notebook for download.-->
     <a href="https://github.com/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">Prototype for Vision Assistance:</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>   This application identifies nearby objects, estimates their distances, and describes their positions—left, right, or ahead of the user.
-Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<br>
+Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<br><br>
+
+                <a href="https://github.com/CNUClasses/471_code/blob/master/week11/LLM_Prompting_HF_Basics.ipynb">LLM Prompting Basics with the 🤗 Hugging Face Inference API</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week11/LLM_Prompting_HF_Basics.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> An introduction to prompting large language models (LLMs) using the Hugging Face Inference API. Covers basic prompt engineering techniques, including zero-shot and few-shot prompting.<br>
+                <br>
+                <a href="https://github.com/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">Embeddings & Cosine Similarity: A Hands-On Mini‑Lab</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> An introduction to embeddings and cosine similarity<br><br>
 
             </td> 
         </tr>
         <tr>
 <!--            <td class="style_white ">11</td>
             <td class="style_white ">
-                <strong>Fine Tune a LLM, Prompting, Learning Rate Schedulers, RAG intro</strong><br><br>
+                <strong>Fine Tune a LLM, RAG intro</strong><br><br>
                 <strong>Lectures</strong><br>
-                    <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Learning-Rate-Schedulers.pdf">Learning Rate Schedulers: Cosine Annealing & One Cycle</a></strong> Used heavily with LLMs (and with most other DL models). <mark>With these you do not do early stopping.</mark><br>
-                    <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Prompting-Large-Language-Models-with-Hugging-Face.pdf">Introduction to LLM Prompting with the Hugging Face API</a></strong> An introduction to prompting large language models (LLMs) using the Hugging Face Inference API. <br><br>
-                    <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Retrieval-Augmented-Generation-RAG.pdf">Introduction to Retrieval-Augmented Generation (RAG)</a></strong> An introduction to Retrieval-Augmented Generation (RAG) using the Hugging Face Inference API. <br><br>
+                   <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Retrieval-Augmented-Generation-RAG.pdf">Introduction to Retrieval-Augmented Generation (RAG)</a></strong> An introduction to Retrieval-Augmented Generation (RAG) using the Hugging Face Inference API. <br><br>
 
                     
                 <strong>Readings</strong><br>
-                <strong><a href="https://huggingface.co/docs/transformers/en/tasks/prompting">Hugging Face - Prompt Engineering</a><br>
-                <mark><a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation">Retrieval-Augmented Generation</a>EXCELLENT! Covers core RAG material and its relation to modern hybrid search (RAG plus keyword retrieval). Note: Hybrid search is not covered in this course.</mark><br>
+               <mark><a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation">Retrieval-Augmented Generation</a>EXCELLENT! Covers core RAG material and its relation to modern hybrid search (RAG plus keyword retrieval). Note: Hybrid search is not covered in this course.</mark><br>
 <br><br>
             </td>
             <td class="style_white ">
@@ -579,12 +617,7 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                     </tr>
                 </table>
 
-                 <a href="https://github.com/CNUClasses/471_code/blob/master/week11/LLM_Prompting_HF_Basics.ipynb">LLM Prompting Basics with the 🤗 Hugging Face Inference API</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week11/LLM_Prompting_HF_Basics.ipynb">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> An introduction to prompting large language models (LLMs) using the Hugging Face Inference API. Covers basic prompt engineering techniques, including zero-shot and few-shot prompting.<br>
-                <br>
-                <a href="https://github.com/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">Embeddings & Cosine Similarity: A Hands-On Mini‑Lab</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> An introduction to embeddings and cosine similarity<br><br>
-
+ 
             </td>
         </tr>
  <!--       <tr>
@@ -678,23 +711,7 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
  
                 <a href="https://docs.ragas.io/en/stable/getstarted/rag_eval/">RAGAs generating synthetic data using an LLM</a><br>
 
-                <ul style="color: #cc0000">
-                <strong >Test 2, 11/24/25 includes all content on course website from week 7 thru week 13 and project 4</strong>
-                <li>You may bring 1 sheet of paper with notes on both sides if you like. No other resources are allowed.</li> 
-                <li>Embeddings, Glove, BERT, Byte-pair, whay are BERT embeddings better than Glove</li>
-                <li>dot product, cosine similarity</li>
-                <li>self attention, the matrix math</li>
-                <li>GPT training pipeline (DDP verses Pipeline Parallism verses Tensor Parallelism</li>
-                <li>Learning rate schedulers</li>
-                <li>Prompting (chat roles, constructing LLM prompts)</li>
-                <li>What RAG is and how it works.</li>
-                <li>the difference between bi-encoders and cross-encoders (rerankers).</li>
-                <li>How vector databases work and how to use them.</li>
-                <li>Vector search algorithms</li>
-                <li>RAG evaluation metrics (especially the PRACTICE: notebook)</li>
-                <li></li>
                 
-                </ul>
             </ul>
             </td>
             <td class="style_white ">
