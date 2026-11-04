@@ -492,7 +492,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
                 <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week10/GPT-Assistant-Training-Pipeline.pdf">GPT Training Pipeline</a></strong> An overview of what it takes to train a frontier LLM </a><br>
                     <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Learning-Rate-Schedulers.pdf">Learning Rate Schedulers: Cosine Annealing & One Cycle</a></strong> Standard in LLM training and common across deep learning. <mark>Don't cut a planned schedule short with early stopping. Finish it and keep the best checkpoint.</mark></mark><br>
                     <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Prompting-Large-Language-Models-with-Hugging-Face.pdf">Introduction to LLM Prompting with the Hugging Face API</a></strong> An introduction to prompting large language models (LLMs) using the Hugging Face Inference API. <br><br>
- 
+
                 
                 <!-- IGNORE OR REWRITE THIS BEFORE USE- skip for 2026    
                      Need KV cache for a more detailed look at model memory requirements
@@ -547,37 +547,32 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
             <td class="style_white ">
                 
 
-        
-                The most high level API in Hugging Face is the <strong>pipeline</strong> API.  This allows you to quickly use pretrained models for common tasks without having to understand the details of how the models work.<br><br>
+        <!--  Dont do these 2 for 2026 
                 <a href="https://github.com/CNUClasses/471_code/blob/master/week10/HF_Pipelines_ZeroShot_Beginner.ipynb">HF Pipelines</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week10/HF_Pipelines_ZeroShot_Beginner.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Learn how to use 🤗 Transformers <strong>pipeline</strong> to run <strong>pretrained</strong> models quickly (no fine‑tuning) and
 see where <strong>zero‑shot</strong> pipelines are powerful.<br>
 
-    <!-- I used this prompt to create the following notebook<br>
+    <!--I used this prompt to create the following notebook<br>
    create a notebook for 4th year computer science students that demonstrates hugging faces pipeline. Specifically I want 3 things, a model that detects objects and their locations in a photo, another model that estimates the distance to these objects, and a third model which describes these objects and how far away they are and whether they are to the right, the left or in front. The front in an image is a verticle slice through the center of an image. Comment appropriately for someone just learning how to use these models. Emphasize that the notebook demonstrates pre trained zero shot models when applicable. Please put this in an annotated jupyter notebook for download.-->
-    <a href="https://github.com/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">Prototype for Vision Assistance:</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>   This application identifies nearby objects, estimates their distances, and describes their positions—left, right, or ahead of the user.
-Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<br><br>
+
+
 
                 <a href="https://github.com/CNUClasses/471_code/blob/master/week11/LLM_Prompting_HF_Basics.ipynb">LLM Prompting Basics with the 🤗 Hugging Face Inference API</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week11/LLM_Prompting_HF_Basics.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> An introduction to prompting large language models (LLMs) using the Hugging Face Inference API. Covers basic prompt engineering techniques, including zero-shot and few-shot prompting.<br>
                 <br>
-                <a href="https://github.com/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">Embeddings & Cosine Similarity: A Hands-On Mini‑Lab</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> An introduction to embeddings and cosine similarity<br><br>
-
+                <p><b>OPTIONAL: Hugging Face Vision Pipelines</b> –
+<a href="https://github.com/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">Prototype for Vision Assistance</a><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week10/HF_Pipeline_Detection_Depth_Describe.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>:
+an app that identifies nearby objects, estimates their distances, and describes their positions (left, right, or ahead of the user).
+It's built entirely with 🤗 Hugging Face's <code>pipeline</code> API, the highest-level API in the library, which lets you run pretrained models for common tasks without knowing how the models work internally.</p>
+               
+ 
             </td> 
         </tr>
-        <tr>
-<!--            <td class="style_white ">11</td>
+ <!--       <tr>
+    <td class="style_white ">REMOVED</td>
             <td class="style_white ">
-                <strong>Fine Tune a LLM, RAG intro</strong><br><br>
-                <strong>Lectures</strong><br>
-                   <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Retrieval-Augmented-Generation-RAG.pdf">Introduction to Retrieval-Augmented Generation (RAG)</a></strong> An introduction to Retrieval-Augmented Generation (RAG) using the Hugging Face Inference API. <br><br>
-
-                    
-                <strong>Readings</strong><br>
-               <mark><a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation">Retrieval-Augmented Generation</a>EXCELLENT! Covers core RAG material and its relation to modern hybrid search (RAG plus keyword retrieval). Note: Hybrid search is not covered in this course.</mark><br>
-<br><br>
+            <br><br>
             </td>
             <td class="style_white ">
                 Fine tuning a hugging face encoder. Either use the <strong>Trainer</strong> class which is a high level wrapper around a pytorch training loop, or implement a training loop using pytorch. Both are demonstrated below.<br><br>
@@ -585,7 +580,8 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                 
                 
                 <!-- <table class="inner-table"> -->
-<!--                <table class="inner-table">   
+                <!-- these 2 replaced by above encoder example
+                 <table class="inner-table">   
                     <tr >
 
                         
@@ -615,15 +611,16 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                         </td>
                     </tr>
                 </table>
-
  
             </td>
-        </tr>
- <!--       <tr>
+        </tr>-->
+<!--      <tr>
             <td class="style_white ">12</td>
             <td class="style_white ">
                 <strong> Vector Search Algorithms, Chunking Data, Vector Databases (Chroma), Rerankers, Full RAG pipeline  </strong><br><br>
                 <strong>Lectures</strong><br>
+                <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week11/Retrieval-Augmented-Generation-RAG.pdf">Introduction to Retrieval-Augmented Generation (RAG)</a></strong> An introduction to Retrieval-Augmented Generation (RAG) using the Hugging Face Inference API. <br><br>
+
                 <strong><a href="https://cnuclasses.github.io/CPSC471/content/lectures/week12/Similarity_Search_kNN_IVF_HNSW.pdf">Vector DB search algorithm insights</a></strong> or how to quickly and effeciently compare millions of vectors to a query<br>
 
                 <!-- Chunking Data for RAG - covered in RAG intro<br>
@@ -638,6 +635,8 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
 
            
                 <strong>Readings</strong><br>
+                <mark><a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation">Retrieval-Augmented Generation</a>EXCELLENT! Covers core RAG material and its relation to modern hybrid search (RAG plus keyword retrieval). Note: Hybrid search is not covered in this course.</mark><br>
+
                 <strong><a href="https://www.pinecone.io/learn/series/faiss/hnsw/">HNSW: Hierarchical Navigable Small Worlds</a></strong>A detailed explanation of HNSW, a popular approximate nearest neighbor search algorithm used in vector databases.<br><br>
                   <strong><a href="https://sbert.net/docs/quickstart.html#sentence-transformer">Sentence Transformer-QuickStart</a></strong>Introduction to bi-encoders and cross encoders<br><br>
             <strong><a href="Finding the Best Chunking Strategy for Accurate AI Responses">NVIDIA: Finding the Best Chunking Strategy for Accurate AI Responses</a></strong> An in-depth look at various chunking strategies for RAG systems and their impact on response accuracy.<br>
@@ -655,14 +654,18 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
                 
             </td>
             <td class="style_white ">
+                <a href="https://github.com/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">Embeddings & Cosine Similarity: A Hands-On Mini‑Lab</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> An introduction to embeddings and cosine similarity<br><br>
+
+
                 <a href="https://github.com/CNUClasses/471_code/blob/master/week12/bi_encoder_vs_reranker_demo.ipynb">Bi-encoders verses rerankers</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/bi_encoder_vs_reranker_demo.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Compare the performance of a bi-encoder and a cross-encoder (reranker) on a passage retrieval task. Demonstrates why rerankers are more accurate but slower than bi-encoders.<br><br>
 
                 <!-- weaviate is hard to set up and hard to use verses chroma so we will use chroma, BUT weaviate will do hybrid search automatically, chromaDB will not<br><br> -->
 <!--                 <strong>NOTE: The following 2 projects require pdfs in the notebooks ./pdf directory</strong><br><br>
-                 <!-- <a href="https://github.com/CNUClasses/471_code/blob/master/week12/Vector_Search_Toy_Plots_kNN_IVF_HNSW.ipynb">KNN, NSW and HNSW plots</a> -->
-                <!-- <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/vector_upsert_pipeline.png" alt="standard" style="max-height:100px;  margin:10px 0; vertical-align:middle;"><br> -->
-<!--                <table class="inner-table">
+                 <a href="https://github.com/CNUClasses/471_code/blob/master/week12/Vector_Search_Toy_Plots_kNN_IVF_HNSW.ipynb">KNN, NSW and HNSW plots</a>
+                <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/vector_upsert_pipeline.png" alt="standard" style="max-height:100px;  margin:10px 0; vertical-align:middle;"><br>
+                <table class="inner-table">
                     <tr >
                         <td >
                             <a href="https://github.com/CNUClasses/471_code/blob/master/week12/RAG_Lab1_langchain_PDF_Chunk_Embed_Chroma.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/vector_upsert_pipeline.png" alt="standard" style="max-height:100px;  margin:10px 0; vertical-align:middle;"></a>
@@ -692,7 +695,7 @@ Built using 🤗 Hugging Face pipelines and pretrained computer vision models.<b
         </tr>
 
         
-        <tr>
+ <!--       <tr>
             <td class="style_white ">13</td>
             <td class="style_white ">
                 <strong>RAG Pipeline Evaluation</strong><br><br>
