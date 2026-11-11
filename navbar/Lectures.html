@@ -662,44 +662,50 @@ It's built entirely with 🤗 Hugging Face's <code>pipeline</code> API, the high
                 
             </td>
             <td class="style_white ">
-                <a href="https://github.com/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">Embeddings & Cosine Similarity: A Hands-On Mini‑Lab</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> An introduction to embeddings and cosine similarity<br><br>
+                <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">Embeddings & Cosine Similarity: A Hands-On Mini‑Lab</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week11/embeddings_cosine_similarity_mini_lab.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Review from week 11: embed sentences, find the closest ones with cosine similarity, and paste them into an LLM prompt (RAG without a database).<br><br>
 
+                <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week12/RAG_with_ChromaDB.ipynb">Simple RAG with ChromaDB</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/RAG_with_ChromaDB.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> <strong>Start here.</strong> The whole RAG pipeline on one page, using a short made-up syllabus: chunk, store in ChromaDB, retrieve the top-k chunks, answer with a small local LLM. Plots show what happens at each step. Labs 1 and 2 below do the same steps at full scale.<br><br>
 
-                <a href="https://github.com/CNUClasses/471_code/blob/master/week12/bi_encoder_vs_reranker_demo.ipynb">Bi-encoders verses rerankers</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/bi_encoder_vs_reranker_demo.ipynb">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Compare the performance of a bi-encoder and a cross-encoder (reranker) on a passage retrieval task. Demonstrates why rerankers are more accurate but slower than bi-encoders.<br><br>
+                <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week12/Vector_Search_Toy_Plots_kNN_IVF_HNSW.ipynb">kNN, IVF, NSW and HNSW plots</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/Vector_Search_Toy_Plots_kNN_IVF_HNSW.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> 2-D toy versions of each search algorithm from the lecture: exact kNN, IVF clusters and nprobe, and HNSW layers with a greedy search path. No PDFs needed.<br><br>
+
+                <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week12/bi_encoder_vs_reranker_demo.ipynb">Bi-encoders versus rerankers</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/bi_encoder_vs_reranker_demo.ipynb">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Why add a second search step? A bi-encoder (used for the vector search) is fast but approximate. A cross-encoder (reranker) reads the question and each passage together: slower, but more accurate. This sets up Lab 2.<br><br>
 
                 <!-- weaviate is hard to set up and hard to use verses chroma so we will use chroma, BUT weaviate will do hybrid search automatically, chromaDB will not<br><br> -->
-                 <strong>NOTE: The following 2 projects require pdfs in the notebooks ./pdf directory</strong><br><br>
-                 <!-- <a href="https://github.com/CNUClasses/471_code/blob/master/week12/Vector_Search_Toy_Plots_kNN_IVF_HNSW.ipynb">KNN, NSW and HNSW plots</a>
-                <img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/vector_upsert_pipeline.png" alt="standard" style="max-height:100px;  margin:10px 0; vertical-align:middle;"><br>-->
-                <table class="inner-table">
+                 <strong>NOTE: Labs 1 and 2 require PDFs in the notebook's ./pdf directory. Run Lab 1 first: Lab 2 uses the database it creates.</strong><br><br>
+                 <table class="inner-table">
                     <tr >
                         <td >
-                            <a href="https://github.com/CNUClasses/471_code/blob/master/week12/RAG_Lab1_langchain_PDF_Chunk_Embed_Chroma.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/vector_upsert_pipeline.png" alt="standard" style="max-height:100px;  margin:10px 0; vertical-align:middle;"></a>
+                            <a href="https://github.com/CNUClasses/471_code/blob/master/week12/RAG_Lab1_langchain_PDF_Chunk_Embed_Chroma.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/vector_upsert_pipeline.png" alt="Lab 1 indexing pipeline: PDF, chunk, embed, store in Chroma" style="max-height:100px;  margin:10px 0; vertical-align:middle;"></a>
                         </td>
                         <td >
                             <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/RAG_Lab1_langchain_PDF_Chunk_Embed_Chroma.ipynb">
                             <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>
                         </td>
                         <td >
-                            Fixed is fast but does not respect semantic (or even sentence) boundaries.  LLMs should be able to split documents into chunks that capture one topic
+                            <strong>Lab 1 · Indexing (real PDFs).</strong> Load PDFs, split them with LangChain, embed the chunks, and save them in a Chroma database on disk for Lab 2. PCA and UMAP plots show the chunk embeddings.
+                            Fixed-size chunking is fast but ignores sentence and topic boundaries. An optional section shows how an LLM could split by topic instead.
                         </td>
                     </tr>
                     <tr>
                         <td >
-                            <a href="https://github.com/CNUClasses/471_code/blob/master/week12/RAG_Lab2_Retrieve_Rerank_HFLLM.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/complete_RAG_pipeline.png" alt="standard" style="max-height:350px;  margin:10px 0; vertical-align:middle;"></a>
+                            <a href="https://github.com/CNUClasses/471_code/blob/master/week12/RAG_Lab2_Retrieve_Rerank_HFLLM.ipynb"><img src="https://raw.githubusercontent.com/CNUClasses/CPSC471/master/content/lectures/week12/complete_RAG_pipeline.png" alt="Lab 2 query pipeline: retrieve, rerank, generate" style="max-height:350px;  margin:10px 0; vertical-align:middle;"></a>
                         </td>
                         <td >
                             <a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/RAG_Lab2_Retrieve_Rerank_HFLLM.ipynb">
                             <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a>
                         </td>
                         <td >
-                            Implements a compact RAG pipeline using only Hugging Face Models: it embeds a user query, retrieves candidates from a Chroma collection, reranks them, and generates a grounded answer with a LLM.
+                            <strong>Lab 2 · Querying.</strong> Load Lab 1's Chroma database, retrieve candidates, rerank them with a cross-encoder, and answer with Mistral-7B-Instruct in an interactive interface.
+                            Compared with Simple RAG, it adds a saved database, reranking and real documents.
                         </td>
                     </tr>
                 </table>
             </td>
+
         </tr>
 
         
