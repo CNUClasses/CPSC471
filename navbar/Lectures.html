@@ -671,9 +671,6 @@ It's built entirely with 🤗 Hugging Face's <code>pipeline</code> API, the high
                 <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week12/Vector_Search_Toy_Plots_kNN_IVF_HNSW.ipynb">kNN, IVF, NSW and HNSW plots</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/Vector_Search_Toy_Plots_kNN_IVF_HNSW.ipynb">
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> 2-D toy versions of each search algorithm from the lecture: exact kNN, IVF clusters and nprobe, and HNSW layers with a greedy search path. No PDFs needed.<br><br>
 
-                <strong><a href="https://github.com/CNUClasses/471_code/blob/master/week12/bi_encoder_vs_reranker_demo.ipynb">Bi-encoders versus rerankers</a> </strong><a target="_blank" href="https://colab.research.google.com/github/CNUClasses/471_code/blob/master/week12/bi_encoder_vs_reranker_demo.ipynb">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align:middle;"/></a> Why add a second search step? A bi-encoder (used for the vector search) is fast but approximate. A cross-encoder (reranker) reads the question and each passage together: slower, but more accurate. This sets up Lab 2.<br><br>
-
                 <!-- weaviate is hard to set up and hard to use verses chroma so we will use chroma, BUT weaviate will do hybrid search automatically, chromaDB will not<br><br> -->
                  <strong>NOTE: Labs 1 and 2 require PDFs in the notebook's ./pdf directory. Run Lab 1 first: Lab 2 uses the database it creates.</strong><br><br>
                  <table class="inner-table">
@@ -709,18 +706,16 @@ It's built entirely with 🤗 Hugging Face's <code>pipeline</code> API, the high
         </tr>
 
         
- <!--       <tr>
+       <tr>
             <td class="style_white ">13</td>
             <td class="style_white ">
                 <strong>RAG Pipeline Evaluation</strong><br><br>
                 <strong>Lectures</strong><br>
-                <!-- Generating synthetic data for RAG testing: Take 10% of chunked data, generate Q/A pairs using LLM, use these to evaluate RAG system. This was proposed by the RAGAS framework (Retrieval‑Augmented Generation Assessment). The core idea is to leverage LLMs for automated, scalable RAG evaluation<br><br>-->
-            
-<!--                <a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation/lesson/558u1/evaluating-retrieval">Evaluating Retrieval</a>A good overview of how to evaluate retrieval systems, Precision, Recall, MRR, <br><br> 
-                <!-- <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/RAG_Evaluation.pdf"></a> -->
-                <!-- see google drive for above slides -->
+                <strong>Aside: How to generate Synthetic test data for RAG evaluation.</strong> Hand-labeling questions is slow, so a common shortcut is to sample a subset of your chunks (say 10%) and have an LLM write a question–answer pair for each. Because you know which chunk each question came from, you can measure retrieval directly (did the system return that chunk?) and grade the generated answer against the reference. Frameworks such as RAGAS automate this, and add LLM-judged metrics like faithfulness (is the answer supported by the retrieved context?) and answer relevance. Caveat: LLM-written questions tend to copy the wording of their source chunk, which makes retrieval look easier than it is with real user queries. Spot-check a sample by hand, and include some rephrased or multi-chunk questions.<br><br>
+               <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/RAG_Evaluation.pdf">Evaluating Retrieval</a>A good overview of how to evaluate retrieval systems, Precision, Recall, MRR, <br><br>
 
-<!--                <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/finetuning_hardnegativemining.pdf">Bi-coder LLM (embedder) fine tuning pipeline</a>An overview of fine tuning a Hugging Face Embedding Model using MNRL and Triplet loss, plus an introduction to Hard Negative mining.<br><br>
+
+                <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/finetuning_hardnegativemining.pdf">Bi-coder LLM (embedder) fine tuning pipeline</a>An overview of fine tuning a Hugging Face Embedding Model using MNRL and Triplet loss, plus an introduction to Hard Negative mining.<br><br>
 
                 <strong>Readings</strong><br>
                 <strong><a href="https://learn.deeplearning.ai/courses/retrieval-augmented-generation/lesson/77dr2c/prompt-engineering%3A-building-your-augmented-prompt">Prompt Engineering - building an augmented prompt for RAG systems</a></strong> <br>
@@ -769,7 +764,7 @@ It's built entirely with 🤗 Hugging Face's <code>pipeline</code> API, the high
             </td>
         </tr> 
         <tr>
-            <td class="style_white ">14</td>
+<!--            <td class="style_white ">14</td>
             <td class="style_white ">
                 <strong>TEST 2 and 🦃 Thanksgiving Break</strong><br><br>
             </td>
@@ -953,6 +948,3 @@ It's built entirely with 🤗 Hugging Face's <code>pipeline</code> API, the high
         RAG
 
         focal loss?
-
-
-
