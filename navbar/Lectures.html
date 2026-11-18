@@ -471,22 +471,7 @@ To me, AI is a multifaceted teaching tool, a catalyst for idea generation, a kno
             <td class="style_white ">
                 <strong>GPT training, Hugging Face Pipelines, Prompting, Learning Rate Schedulers</strong><br><br>
 
-                <ul style="color: #cc0000">
-                <strong >Test 2, 11/23/26 includes all content on course website from week 7 thru week 13 and project 4</strong>
-                <li>You may bring 1 sheet of paper with notes on both sides if you like. No other resources are allowed.</li> 
-                <li>Embeddings, Glove, BERT, Byte-pair, why BERT embeddings are better than Glove</li>
-                <li>dot product, cosine similarity</li>
-                <li>self attention, the matrix math</li>
-                <li>GPT training pipeline (DDP verses Pipeline Parallism verses Tensor Parallelism</li>
-                <li>Learning rate schedulers</li>
-                <li>Prompting (chat roles, constructing LLM prompts)</li>
-                <li>What RAG is and how it works.</li>
-                <li>the difference between bi-encoders and cross-encoders (rerankers).</li>
-                <li>How vector databases work and how to use them.</li>
-                <li>Vector search algorithms</li>
-                <li>RAG evaluation metrics </li>
                 
-                </ul>
 
                 <strong>Lectures</strong><br><br>
                 <strong>The following 2 lectures apply to Decoder only models (chatGPT, Claude)</strong><br>
@@ -714,7 +699,22 @@ It's built entirely with 🤗 Hugging Face's <code>pipeline</code> API, the high
                 <strong>Aside: How to generate Synthetic test data for RAG evaluation.</strong> Hand-labeling questions is slow, so a common shortcut is to sample a subset of your chunks (say 10%) and have an LLM write a question–answer pair for each. Because you know which chunk each question came from, you can measure retrieval directly (did the system return that chunk?) and grade the generated answer against the reference. Frameworks such as RAGAS automate this, and add LLM-judged metrics like faithfulness (is the answer supported by the retrieved context?) and answer relevance. Caveat: LLM-written questions tend to copy the wording of their source chunk, which makes retrieval look easier than it is with real user queries. Spot-check a sample by hand, and include some rephrased or multi-chunk questions.<br><br>
                 <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/RAG_Evaluation.pdf">Evaluating Retrieval</a>A good overview of how to evaluate retrieval systems, Precision, Recall, MRR, <br><br>
 
-
+<ul style="color: #cc0000">
+                <strong >Test 2, 11/23/26 includes all content on course website from week 7 thru week 13 and project 4</strong>
+                <li>You may bring 1 sheet of paper with notes on both sides if you like. No other resources are allowed.</li> 
+                <li>Embeddings, Glove, BERT, Byte-pair, why BERT embeddings are better than Glove</li>
+                <li>dot product, cosine similarity</li>
+                <li>self attention, the matrix math</li>
+                <li>GPT training pipeline (DDP verses Pipeline Parallism verses Tensor Parallelism</li>
+                <li>Learning rate schedulers</li>
+                <li>Prompting (chat roles, constructing LLM prompts)</li>
+                <li>What RAG is and how it works.</li>
+                <li>the difference between bi-encoders and cross-encoders (rerankers).</li>
+                <li>How vector databases work and how to use them.</li>
+                <li>Vector search algorithms</li>
+                <li>RAG evaluation metrics </li>
+                
+                </ul>
                 <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/Finetuning_Hard_Negative_Mining.pdf">Bi-coder LLM (embedder) fine tuning pipeline</a>An overview of fine tuning a Hugging Face Embedding Model using MNRL and Triplet loss, plus an introduction to Hard Negative mining.<br><br>
 
                 <strong>Readings</strong><br>
