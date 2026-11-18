@@ -697,7 +697,7 @@ It's built entirely with 🤗 Hugging Face's <code>pipeline</code> API, the high
                 <strong>RAG Pipeline Evaluation</strong><br><br>
                 <strong>Lectures</strong><br>
                 <strong>Aside: How to generate Synthetic test data for RAG evaluation.</strong> Hand-labeling questions is slow, so a common shortcut is to sample a subset of your chunks (say 10%) and have an LLM write a question–answer pair for each. Because you know which chunk each question came from, you can measure retrieval directly (did the system return that chunk?) and grade the generated answer against the reference. Frameworks such as RAGAS automate this, and add LLM-judged metrics like faithfulness (is the answer supported by the retrieved context?) and answer relevance. Caveat: LLM-written questions tend to copy the wording of their source chunk, which makes retrieval look easier than it is with real user queries. Spot-check a sample by hand, and include some rephrased or multi-chunk questions.<br><br>
-                <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/RAG_Evaluation.pdf">Evaluating Retrieval</a>A good overview of how to evaluate retrieval systems, Precision, Recall, MRR, <br><br>
+                <a href="https://cnuclasses.github.io/CPSC471/content/lectures/week13/RAG_Evaluation.pdf">Evaluating Retrieval</a>How to evaluate retrieval systems, Precision, Recall, MRR, <br><br>
 
 <ul style="color: #cc0000">
                 <strong >Test 2, 11/23/26 includes all content on course website from week 7 thru week 13 and project 4</strong>
